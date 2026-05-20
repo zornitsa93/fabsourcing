@@ -237,17 +237,21 @@
             <th class="comparison-asia">{{ $lang === 'fr' ? 'Asie' : 'Asia' }}</th>
           </tr>
         </thead>
+        @php
+          $eastLabel = $lang === 'fr' ? "Europe de l'Est" : 'Eastern Europe';
+          $asiaLabel = $lang === 'fr' ? 'Asie' : 'Asia';
+        @endphp
         <tbody>
           @foreach($rows as $row)
             <tr>
               <td class="comparison-criterion">{{ $row['criterion'] }}</td>
               <td class="comparison-east comparison-val-east"
-                  data-label="{{ $lang === 'fr' ? \"Europe de l'Est\" : 'Eastern Europe' }}">
+                  data-label="{{ $eastLabel }}">
                 <span class="comparison-check">✓</span>
                 {{ $row['east'] }}
               </td>
               <td class="comparison-asia comparison-val-asia"
-                  data-label="{{ $lang === 'fr' ? 'Asie' : 'Asia' }}">{{ $row['asia'] }}</td>
+                  data-label="{{ $asiaLabel }}">{{ $row['asia'] }}</td>
             </tr>
           @endforeach
         </tbody>
