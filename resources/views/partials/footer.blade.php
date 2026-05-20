@@ -60,7 +60,7 @@
 
     <div class="footer-bottom">
       <span>© {{ now()->year }} Fab Sourcing — {{ $lang === 'fr' ? 'Tous droits réservés' : 'All rights reserved' }}</span>
-      <div style="display:flex; gap:20px; align-items:center">
+      <div class="footer-bottom-links">
         <a href="{{ route($lang === 'en' ? 'legal.mentions.en' : 'legal.mentions', $lang) }}"
            style="color:rgba(255,255,255,0.5); font-family:inherit; font-size:inherit; letter-spacing:inherit; text-decoration:none; transition:color 0.15s"
            onmouseover="this.style.color='rgba(255,255,255,0.85)'"

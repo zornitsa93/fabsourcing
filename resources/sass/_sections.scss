@@ -637,6 +637,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   @media (max-width: $bp-tablet) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: $bp-mobile) { grid-template-columns: 1fr; }
 }
 
 .footer-logo  { height: 56px; width: auto; display: block; }
@@ -656,6 +657,8 @@
   object-fit: cover;
   object-position: center top;
   border: 2px solid rgba(255, 255, 255, 0.18);
+
+  @media (max-width: $bp-mobile) { width: 80px; height: 80px; }
 }
 
 .footer-person-name {
@@ -712,6 +715,15 @@
   letter-spacing: 0.08em;
 
   @media (max-width: $bp-tablet) { flex-direction: column; gap: 12px; }
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-mobile) { justify-content: center; }
 }
 
 // Blog index layout
@@ -1152,6 +1164,49 @@
   color: #22c55e;
   font-weight: 700;
   margin-right: 6px;
+}
+
+@media (max-width: $bp-mobile) {
+  .comparison-table {
+    display: block;
+    width: 100%;
+
+    thead { display: none; }
+    tbody { display: block; }
+
+    tr {
+      display: block;
+      background: $bg;
+      border: 1px solid $line-strong;
+      border-radius: $radius;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+
+    td {
+      display: block;
+      padding: 6px 0;
+      border-bottom: none;
+
+      &.comparison-criterion {
+        font-size: 15px;
+        padding-bottom: 12px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid $line;
+      }
+
+      &[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        font-family: $font-mono;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $ink-400;
+        margin-bottom: 2px;
+      }
+    }
+  }
 }
 
 // Client type grid (About page)

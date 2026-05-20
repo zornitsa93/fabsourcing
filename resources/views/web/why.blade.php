@@ -241,11 +241,13 @@
           @foreach($rows as $row)
             <tr>
               <td class="comparison-criterion">{{ $row['criterion'] }}</td>
-              <td class="comparison-east comparison-val-east">
+              <td class="comparison-east comparison-val-east"
+                  data-label="{{ $lang === 'fr' ? \"Europe de l'Est\" : 'Eastern Europe' }}">
                 <span class="comparison-check">✓</span>
                 {{ $row['east'] }}
               </td>
-              <td class="comparison-asia comparison-val-asia">{{ $row['asia'] }}</td>
+              <td class="comparison-asia comparison-val-asia"
+                  data-label="{{ $lang === 'fr' ? 'Asie' : 'Asia' }}">{{ $row['asia'] }}</td>
             </tr>
           @endforeach
         </tbody>

@@ -55,6 +55,17 @@ class ProductCategory extends Model
             : Storage::disk('public')->url($this->image);
     }
 
+    public function getMediumUrlAttribute(): ?string
+    {
+        if (!$this->image) return null;
+        $base   = pathinfo($this->image, PATHINFO_FILENAME);
+        $dir    = pathinfo($this->image, PATHINFO_DIRNAME);
+        $medium = $dir . '/' . $base . '_medium.jpg';
+        return Storage::disk('public')->exists($medium)
+            ? Storage::disk('public')->url($medium)
+            : Storage::disk('public')->url($this->image);
+    }
+
     public function products()
     {
         return $this->hasMany(Product::class)->orderBy('sort_order');

@@ -6,12 +6,16 @@
   max-width: $container;
   margin: 0 auto;
   padding: 0 $gutter;
+
+  @media (max-width: $bp-mobile) { padding: 0 16px; }
 }
 
 .container-wide {
   max-width: $container-wide;
   margin: 0 auto;
   padding: 0 $gutter;
+
+  @media (max-width: $bp-mobile) { padding: 0 16px; }
 }
 
 .section       { padding: clamp(72px, 9vw, 128px) 0; }

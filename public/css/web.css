@@ -113,11 +113,21 @@
   margin: 0 auto;
   padding: 0 32px;
 }
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
 
 .container-wide {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 32px;
+}
+@media (max-width: 640px) {
+  .container-wide {
+    padding: 0 16px;
+  }
 }
 
 .section {
@@ -187,6 +197,11 @@
   display: block;
   flex-shrink: 0;
 }
+@media (max-width: 900px) {
+  .brand-logo {
+    height: 40px;
+  }
+}
 
 .nav-links {
   display: flex;
@@ -231,6 +246,11 @@
   display: flex;
   align-items: center;
   gap: 14px;
+}
+@media (max-width: 900px) {
+  .nav-right > .btn {
+    display: none;
+  }
 }
 
 .lang-toggle {
@@ -341,8 +361,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   border: 1px solid rgba(15, 30, 61, 0.18);
   background: transparent;
@@ -478,7 +498,7 @@
 .hero-a .hero-a-headline {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
-  font-size: clamp(56px, 6.8vw, 66px);
+  font-size: clamp(40px, 6.8vw, 66px);
   line-height: 1;
   letter-spacing: -0.045em;
   max-width: 14ch;
@@ -2063,6 +2083,11 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .footer-logo {
   height: 56px;
@@ -2094,6 +2119,12 @@
   -o-object-position: center top;
      object-position: center top;
   border: 2px solid rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 640px) {
+  .footer-person-avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .footer-person-name {
@@ -2159,6 +2190,18 @@
   .footer-bottom {
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .footer-bottom-links {
+    justify-content: center;
   }
 }
 
@@ -2673,6 +2716,47 @@
   margin-right: 6px;
 }
 
+@media (max-width: 640px) {
+  .comparison-table {
+    display: block;
+    width: 100%;
+  }
+  .comparison-table thead {
+    display: none;
+  }
+  .comparison-table tbody {
+    display: block;
+  }
+  .comparison-table tr {
+    display: block;
+    background: #ffffff;
+    border: 1px solid rgba(15, 30, 61, 0.18);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .comparison-table td {
+    display: block;
+    padding: 6px 0;
+    border-bottom: none;
+  }
+  .comparison-table td.comparison-criterion {
+    font-size: 15px;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(15, 30, 61, 0.08);
+  }
+  .comparison-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8a96ad;
+    margin-bottom: 2px;
+  }
+}
 .client-type-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

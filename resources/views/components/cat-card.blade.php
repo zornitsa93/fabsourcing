@@ -9,8 +9,13 @@
 <a href="{{ $contactUrl }}" class="cat-card">
   @if($cat->image)
     <img src="{{ Storage::url($cat->image) }}"
+         srcset="{{ $cat->thumb_url }} 400w,
+                 {{ $cat->medium_url }} 800w,
+                 {{ Storage::url($cat->image) }} 1600w"
+         sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
          alt=""
          loading="lazy"
+         decoding="async"
          class="cat-card-bg-img">
     <div class="cat-card-overlay"></div>
   @endif

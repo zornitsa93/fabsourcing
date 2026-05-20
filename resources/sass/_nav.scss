@@ -36,6 +36,8 @@
   width: auto;
   display: block;
   flex-shrink: 0;
+
+  @media (max-width: $bp-nav) { height: 40px; }
 }
 
 .nav-links {
@@ -79,6 +81,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
+
+  > .btn { @media (max-width: $bp-nav) { display: none; } }
 }
 
 .lang-toggle {
@@ -182,8 +186,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   border: 1px solid $line-strong;
   background: transparent;
