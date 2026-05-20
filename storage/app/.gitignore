@@ -1,0 +1,13 @@
+*
+!public/
+!public/categories/
+!public/categories/**
+!public/blog/
+!public/blog/**
+!public/pages/
+!public/pages/**
+!public/services/
+!public/services/**
+!public/media/
+!public/media/**
+!.gitignore

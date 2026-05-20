@@ -1,0 +1,39 @@
+// ============================================================
+// Design tokens — converted from CSS custom properties
+// ============================================================
+
+// Palette
+$bg:            #ffffff;
+$bg-alt:        #f4f6f9;
+$bg-deep:       #0d1a33;
+$ink-900:       #0f1e3d;
+$ink-800:       #1a2c50;
+$ink-700:       #36486b;
+$ink-500:       #6b7891;
+$ink-400:       #8a96ad;
+$ink-300:       #b8c0d0;
+$line:          rgba(15, 30, 61, 0.08);
+$line-strong:   rgba(15, 30, 61, 0.18);
+$accent:        #2b62d9;
+$accent-hover:  #1d4eb8;
+$accent-soft:   rgba(43, 98, 217, 0.08);
+$steel-1:       #c9d1de;
+$steel-2:       #8896ae;
+
+// Typography
+$font-sans:     "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+$font-mono:     "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+// Layout
+$container:     1280px;
+$container-wide: 1440px;
+$gutter:        32px;
+$radius-sm:     4px;
+$radius:        8px;
+$radius-lg:     16px;
+
+// Breakpoints
+$bp-mobile:     640px;
+$bp-tablet:     800px;
+$bp-nav:        900px;
+$bp-desktop:    1024px;

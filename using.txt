@@ -1,0 +1,7 @@
+1. При създаване на нова страница в базата данни
+ - задължително slug
+ - в routes задължително route с name този slug
+
+2. config/app.php
+ - дефиниране на languages
+ - дефиниране на cache_duration
