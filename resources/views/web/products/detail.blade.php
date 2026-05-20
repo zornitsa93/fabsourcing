@@ -31,7 +31,7 @@
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
-  :hreflang-en="$langSwitcherUrls['en']"
+  :hreflang-en="$langSwitcherUrls['en'] ?? null"
   og-type="product"
   :og-image="$product->main_image_url ?? asset('images/og-default.jpg')"
 />

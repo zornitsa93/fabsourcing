@@ -4,9 +4,9 @@
     'canonical',
     'lang',
     'hreflangFr',
-    'hreflangEn',
-    'ogType'  => 'website',
-    'ogImage' => null,
+    'hreflangEn' => null,
+    'ogType'     => 'website',
+    'ogImage'    => null,
 ])
 
 @php
@@ -16,7 +16,9 @@
 
 <link rel="canonical" href="{{ $canonical }}">
 <link rel="alternate" hreflang="fr"        href="{{ $hreflangFr }}">
+@if($hreflangEn)
 <link rel="alternate" hreflang="en"        href="{{ $hreflangEn }}">
+@endif
 <link rel="alternate" hreflang="x-default" href="{{ $hreflangFr }}">
 
 <meta property="og:site_name"   content="{{ $siteName }}">

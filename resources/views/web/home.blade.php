@@ -22,7 +22,7 @@
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
-  :hreflang-en="$langSwitcherUrls['en']"
+  :hreflang-en="$langSwitcherUrls['en'] ?? null"
   og-type="website"
   :og-image="asset('images/og-default.jpg')"
 />
