@@ -15,7 +15,7 @@ class WebPagesController extends Controller
     {
         $languages = cache()->remember('languages', Config::get('app.cache_duration'), function () {
             return Language::active()->get();
-        })->reject(fn($l) => $l->slug === 'en');
+        });
 
         if (!$languages->contains('slug', $lang)) {
             $lang = $languages->first()?->slug ?? 'bg';

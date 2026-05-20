@@ -32,6 +32,7 @@
   <nav class="a-nav">
     <ul>
       <li><a href="{{ route('settings.index') }}" class="{{ aNavActive($current, 'settings.') }}">Настройки</a></li>
+      <li><a href="{{ route('languages.index') }}" class="{{ aNavActive($current, 'languages.') }}">Езици</a></li>
       <li><a href="{{ route('media.index') }}" class="{{ aNavActive($current, 'media.') }}">Медия библиотека</a></li>
     </ul>
   </nav>
