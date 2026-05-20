@@ -169,7 +169,7 @@
             {{ $lang === 'fr'
               ? 'En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour traiter votre demande.'
               : 'By submitting this form, you agree that your data will be used to process your request.' }}
-            <a href="{{ $lang === 'fr' ? route('legal.privacy') : route('legal.privacy.en') }}" style="color:inherit; text-decoration:underline">
+            <a href="{{ $lang === 'fr' ? route('legal.privacy', $lang) : route('legal.privacy.en', $lang) }}" style="color:inherit; text-decoration:underline">
               {{ $lang === 'fr' ? 'Politique de confidentialité' : 'Privacy policy' }}
             </a>
           </p>
