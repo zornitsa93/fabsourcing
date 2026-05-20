@@ -38,6 +38,7 @@
     <div class="nav-right">
       <a href="tel:+33782085117" class="nav-phone">+33 (0)7 82 08 51 17</a>
 
+      @if(count($languages) > 1)
       <div class="lang-toggle">
         @foreach($languages as $language)
           @php
@@ -49,6 +50,7 @@
           </a>
         @endforeach
       </div>
+      @endif
 
       <a href="{{ route('contact', $lang) }}" class="btn btn-primary">
         {{ $lang === 'fr' ? 'Devis gratuit' : 'Free quote' }}
@@ -103,6 +105,7 @@
       +33 (0)7 82 08 51 17
     </a>
 
+    @if(count($languages) > 1)
     <div class="lang-toggle" style="margin-top:16px">
       @foreach($languages as $language)
         @php
@@ -113,6 +116,7 @@
         </a>
       @endforeach
     </div>
+    @endif
   </div>
 </div>
 
