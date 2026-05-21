@@ -20,6 +20,13 @@
     .stat:nth-child(2) { border-right: none; }
     .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid $line; }
   }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+
+    .stat { border-right: none; border-bottom: 1px solid $line; }
+    .stat:last-child { border-bottom: none; }
+  }
 }
 
 .stat {

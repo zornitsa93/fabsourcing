@@ -1340,6 +1340,18 @@
     border-bottom: 1px solid rgba(15, 30, 61, 0.08);
   }
 }
+@media (max-width: 640px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-grid .stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(15, 30, 61, 0.08);
+  }
+  .stat-grid .stat:last-child {
+    border-bottom: none;
+  }
+}
 
 .stat {
   padding: 36px 28px;
