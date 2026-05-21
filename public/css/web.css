@@ -275,6 +275,28 @@
   color: #ffffff;
 }
 
+.nav-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 900px) {
+  .nav-person {
+    display: none;
+  }
+}
+
+.nav-person-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  flex-shrink: 0;
+}
+
 .nav-phone {
   font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 12px;

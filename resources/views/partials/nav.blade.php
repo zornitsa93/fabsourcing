@@ -36,7 +36,10 @@
 
     {{-- Right: phone + language toggle + CTA --}}
     <div class="nav-right">
-      <a href="tel:+33782085117" class="nav-phone">+33 (0)7 82 08 51 17</a>
+      <div class="nav-person">
+        <img src="{{ asset('images/thierry.jpeg') }}" alt="Thierry Sudol" class="nav-person-avatar">
+        <a href="tel:+33782085117" class="nav-phone">+33 (0)7 82 08 51 17</a>
+      </div>
 
       @if(count($languages) > 1)
       <div class="lang-toggle">
