@@ -48,7 +48,7 @@ class MethodStepsSeeder extends Seeder
             [
                 'number'     => '07',
                 'sort_order' => 7,
-                'title'      => ['fr' => 'Contrôle qualité',         'en' => 'Quality control'],
+                'title'      => ['fr' => 'Rapport d\'inspection / Contrôle qualité', 'en' => 'Inspection report / Quality control'],
                 'description'=> ['fr' => 'Inspections in-process et finales, conformité aux normes européennes avant expédition, avec dossier qualité complet et traçabilité matière.', 'en' => 'In-process and final inspections, compliance with European standards before shipping, with a complete quality file and material traceability.'],
             ],
             [
