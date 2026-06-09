@@ -23,6 +23,13 @@
 />
 @endpush
 
+@push('head')
+<style>
+  /* Service cards are clickable (→ contact); keep card text styling, no link underline */
+  a.service { color: inherit; text-decoration: none; cursor: pointer; }
+</style>
+@endpush
+
 @section('content')
 
 {{-- Page hero --}}
@@ -130,14 +137,14 @@
             $desc     = $service->getTranslation('description', $lang, false) ?: $service->getTranslation('description', 'fr', false);
             $iconPath = $serviceIcons[$service->slug] ?? '';
           @endphp
-          <div class="service col-{{ $service->col_span }}{{ $service->featured ? ' featured' : '' }}">
+          <a href="{{ route('contact', $lang) }}" class="service col-{{ $service->col_span }}">
             @if($iconPath)
               <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">{!! $iconPath !!}</svg>
             @endif
             <span class="service-num">{{ $service->number }}</span>
             <h2 class="service-title">{{ $title }}</h2>
             <p class="service-desc">{{ $desc }}</p>
-          </div>
+          </a>
         @endforeach
       </div>
     @else
