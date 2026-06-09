@@ -8,10 +8,13 @@ use Tests\TestCase;
 class LoginApprovalTest extends TestCase {
     use RefreshDatabase;
     private function user(bool $approved): User {
-        return User::create([
+        $user = User::create([
             'name'=>'U','email'=>'u@acme.fr','password'=>Hash::make('secret123'),
-            'approved_at'=> $approved ? now() : null,
         ]);
+        if ($approved) {
+            $user->forceFill(['approved_at' => now()])->save();
+        }
+        return $user;
     }
     public function test_pending_user_cannot_log_in(): void {
         $this->user(false);
