@@ -23,12 +23,14 @@ class LoginController extends Controller {
             : 'Your account is awaiting approval by our team.';
         $invalid = $lang === 'fr' ? 'Identifiants invalides.' : 'Invalid credentials.';
 
+        // Verify credentials BEFORE revealing approval status, to avoid account enumeration.
+        if (! Auth::validate($data)) {
+            throw ValidationException::withMessages(['email' => $invalid]);
+        }
         if ($user && ! $user->isApproved()) {
             throw ValidationException::withMessages(['email' => $pending]);
         }
-        if (! Auth::attempt($data, $request->boolean('remember'))) {
-            throw ValidationException::withMessages(['email' => $invalid]);
-        }
+        Auth::login($user, $request->boolean('remember'));
         $request->session()->regenerate();
         return redirect()->intended("/$lang/documents");
     }

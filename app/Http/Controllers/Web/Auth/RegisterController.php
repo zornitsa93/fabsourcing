@@ -13,11 +13,11 @@ class RegisterController extends Controller {
     }
     public function store(RegisterRequest $request, string $lang): RedirectResponse {
         $user = User::create([
-            'name'     => $request->string('name'),
-            'email'    => $request->string('email'),
+            'name'     => $request->input('name'),
+            'email'    => $request->input('email'),
             'company'  => $request->input('company'),
             'phone'    => $request->input('phone'),
-            'password' => Hash::make($request->string('password')),
+            'password' => Hash::make($request->input('password')),
             'locale'   => $lang,
         ]);
         $user->forceFill(['gdpr_consent_at' => now()])->save();
