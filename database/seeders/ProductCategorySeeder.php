@@ -21,6 +21,14 @@ class ProductCategorySeeder extends Seeder
                 ->update(['product_category_id' => $mergeTarget->id]);
         }
 
+        // One-time cleanup: drop the short-lived "Balcons" category (ex-"Bardages et façades")
+        // in favour of "Terrasses et balcons métalliques". Remove it and its leftover cladding
+        // products. Idempotent — a no-op once the row no longer exists.
+        foreach (ProductCategory::whereIn('slug', ['balcons', 'bardages-facades'])->get() as $obsolete) {
+            Product::where('product_category_id', $obsolete->id)->delete();
+            $obsolete->delete();
+        }
+
         // Canonical short descriptions — concise, complete, no truncation.
         // Used on both homepage cards and /produits catalogue cards via x-cat-card component.
         $categories = [
@@ -102,17 +110,6 @@ class ProductCategorySeeder extends Seeder
                 'desc_en'       => 'Armoured doors, industrial-style glazed bays and high-performance steel windows, with thermal insulation and security.',
             ],
             [
-                'slug'          => 'balcons',
-                'old_slugs'     => ['bardages-facades', 'bardage-facade-metallique-industriel'],
-                'featured'      => false,
-                'featured_order'=> null,
-                'sort_order'    => 8,
-                'name_fr'       => 'Balcons',
-                'name_en'       => 'Balconies',
-                'desc_fr'       => 'Balcons métalliques sur mesure, préfabriqués en structure acier avec garde-corps intégrés.',
-                'desc_en'       => 'Custom metal balconies, prefabricated steel structure with integrated railings.',
-            ],
-            [
                 'slug'          => 'portails-clotures',
                 'old_slugs'     => ['portail-cloture-acier-sur-mesure', 'portails-clotures'],
                 'featured'      => false,
@@ -128,7 +125,7 @@ class ProductCategorySeeder extends Seeder
                 'old_slugs'     => ['terrasse-balcon-garde-corps-exterieur', 'terrasses-balcons'],
                 'featured'      => false,
                 'featured_order'=> null,
-                'sort_order'    => 10,
+                'sort_order'    => 8,
                 'name_fr'       => 'Terrasses et balcons métalliques',
                 'name_en'       => 'Metal terraces and balconies',
                 'desc_fr'       => 'Terrasses suspendues et balcons préfabriqués en structure acier S235/S355, avec garde-corps intégrés et planchers antidérapants.',
