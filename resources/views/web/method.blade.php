@@ -14,8 +14,8 @@
     ? 'Notre Méthodologie — Fab Sourcing'
     : 'Our Methodology — Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Découvrez notre processus en 7 étapes pour une externalisation industrielle réussie en Bulgarie et en Roumanie. De l\'analyse au suivi qualité.'
-    : 'Discover our 7-step process for successful industrial outsourcing in Bulgaria and Romania. From analysis to quality monitoring.'"
+    ? 'Découvrez notre processus en 7 étapes pour une externalisation industrielle réussie en Bulgarie. De l\'analyse au suivi qualité.'
+    : 'Discover our 7-step process for successful industrial outsourcing in Bulgaria. From analysis to quality monitoring.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -48,8 +48,8 @@
       <div>
         <p class="lede">
           {{ $lang === 'fr'
-            ? 'De la réception de vos plans à la livraison sur votre site, chaque étape est maîtrisée et documentée. Un seul interlocuteur, zéro mauvaise surprise.'
-            : 'From receipt of your drawings to delivery on your site, every step is controlled and documented. One point of contact, zero bad surprises.' }}
+            ? "Un accompagnement structuré. De l'analyse de vos plans à la livraison sur votre site, chaque étape est maîtrisée et documentée. Un seul interlocuteur, zéro mauvaise surprise."
+            : 'A structured process. From the analysis of your drawings to delivery on your site, every step is controlled and documented. One point of contact, zero bad surprises.' }}
         </p>
       </div>
     </div>

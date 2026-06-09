@@ -38,17 +38,17 @@
         </div>
         <h1 class="h-1">
           @if($lang === 'fr')
-            Articles & <em>ressources</em>
+            Actualités & <em>Expertise</em>
           @else
-            Articles & <em>resources</em>
+            News & <em>Expertise</em>
           @endif
         </h1>
       </div>
       <div>
         <p class="lede">
           {{ $lang === 'fr'
-            ? 'Conseils techniques, retours d\'expérience et actualités sur la sous-traitance industrielle en Europe de l\'Est.'
-            : 'Technical advice, experience feedback and news on industrial subcontracting in Eastern Europe.' }}
+            ? 'Décryptages, conseils et tendances sur l\'externalisation industrielle en Europe de l\'Est.'
+            : 'Insights, advice and trends on industrial outsourcing in Eastern Europe.' }}
         </p>
       </div>
     </div>

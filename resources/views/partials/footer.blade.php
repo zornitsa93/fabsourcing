@@ -8,8 +8,8 @@
         <img class="footer-logo" src="{{ asset('images/logo-fab-full-light.png') }}" alt="Fab Sourcing" />
         <p class="footer-tag">
           {{ $lang === 'fr'
-            ? 'Outsourcing industriel en Bulgarie & Roumanie. Métallerie, structures acier, fabrication sur mesure.'
-            : 'Industrial outsourcing in Bulgaria & Romania. Metalwork, steel structures, custom fabrication.' }}
+            ? 'Outsourcing industriel en Bulgarie. Métallerie, structures acier, fabrication sur mesure.'
+            : 'Industrial outsourcing in Bulgaria. Metalwork, steel structures, custom fabrication.' }}
         </p>
       </div>
 
@@ -20,7 +20,7 @@
           <li><a href="{{ route('home',     $lang) }}">{{ $lang === 'fr' ? 'Accueil'        : 'Home' }}</a></li>
           <li><a href="{{ route('services', $lang) }}">{{ $lang === 'fr' ? 'Services'       : 'Services' }}</a></li>
           <li><a href="{{ route('products', $lang) }}">{{ $lang === 'fr' ? 'Produits'       : 'Products' }}</a></li>
-          <li><a href="{{ route('why',      $lang) }}">{{ $lang === 'fr' ? "Pourquoi l'Est" : 'Why East EU' }}</a></li>
+          <li><a href="{{ route('why',      $lang) }}">{{ $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria' }}</a></li>
           <li><a href="{{ route('method',   $lang) }}">{{ $lang === 'fr' ? 'Méthode'        : 'Method' }}</a></li>
           <li><a href="{{ route('about',    $lang) }}">{{ $lang === 'fr' ? 'À propos'       : 'About' }}</a></li>
           <li><a href="{{ route('contact',  $lang) }}">Contact</a></li>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <ul>
-          <li><a href="tel:+33782085117">+33 (0)7 82 08 51 17</a></li>
+          <li><a href="tel:+33784057375">+33 (0)7 84 05 73 75</a></li>
           <li><a href="mailto:tsudol.fabtec@yahoo.com">tsudol.fabtec@yahoo.com</a></li>
         </ul>
       </div>

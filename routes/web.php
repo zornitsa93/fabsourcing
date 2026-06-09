@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\MethodController;
 use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\BlogController;
+use App\Http\Controllers\Web\FaqController;
 use App\Http\Controllers\Web\LegalController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +57,9 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'setlocale', 'where' => ['la
     // About (bilingual paths)
     Route::get('/a-propos',              [AboutController::class,  'index'])->name('about');
     Route::get('/about',                 [AboutController::class,  'index'])->name('about.en');
+
+    // FAQ (same path both languages)
+    Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
     // Contact
     Route::get('/contact',  [ContactController::class, 'index'])->name('contact');

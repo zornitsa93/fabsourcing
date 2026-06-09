@@ -8,12 +8,12 @@
 
 @section('title', ($lang === 'fr' ? $catName . ' — Fab Sourcing' : $catName . ' — Fab Sourcing'))
 
-@section('description', $catDesc ? Str::limit(strip_tags($catDesc), 160) : ($lang === 'fr' ? 'Fabrication métallique sur mesure en Bulgarie et en Roumanie.' : 'Custom metalwork fabrication in Bulgaria and Romania.'))
+@section('description', $catDesc ? Str::limit(strip_tags($catDesc), 160) : ($lang === 'fr' ? 'Fabrication métallique sur mesure en Bulgarie.' : 'Custom metalwork fabrication in Bulgaria.'))
 
 @push('seo')
 <x-seo
   :title="$catName . ' — Fab Sourcing'"
-  :description="$catDesc ? Str::limit(strip_tags($catDesc), 155) : ($lang === 'fr' ? 'Fabrication métallique sur mesure en Bulgarie et en Roumanie.' : 'Custom metalwork fabrication in Bulgaria and Romania.')"
+  :description="$catDesc ? Str::limit(strip_tags($catDesc), 155) : ($lang === 'fr' ? 'Fabrication métallique sur mesure en Bulgarie.' : 'Custom metalwork fabrication in Bulgaria.')"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"

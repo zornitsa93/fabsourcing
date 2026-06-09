@@ -15,9 +15,11 @@
           ['route' => 'home',     'route_en' => null,         'label' => $lang === 'fr' ? 'Accueil'        : 'Home'],
           ['route' => 'services', 'route_en' => null,         'label' => $lang === 'fr' ? 'Services'       : 'Services'],
           ['route' => 'products', 'route_en' => 'products.en','label' => $lang === 'fr' ? 'Produits'       : 'Products'],
-          ['route' => 'why',      'route_en' => 'why.en',     'label' => $lang === 'fr' ? "Pourquoi l'Est" : 'Why East EU'],
+          ['route' => 'why',      'route_en' => 'why.en',     'label' => $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria'],
           ['route' => 'method',   'route_en' => 'method.en',  'label' => $lang === 'fr' ? 'Méthode'        : 'Method'],
           ['route' => 'about',    'route_en' => 'about.en',   'label' => $lang === 'fr' ? 'À propos'       : 'About'],
+          ['route' => 'blog',     'route_en' => null,         'label' => 'Blog'],
+          ['route' => 'faq',      'route_en' => 'faq',        'label' => 'FAQ'],
           ['route' => 'contact',  'route_en' => null,         'label' => 'Contact'],
         ];
       @endphp
@@ -38,7 +40,7 @@
     <div class="nav-right">
       <div class="nav-person">
         <img src="{{ asset('images/thierry.jpeg') }}" alt="Thierry Sudol" class="nav-person-avatar">
-        <a href="tel:+33782085117" class="nav-phone">+33 (0)7 82 08 51 17</a>
+        <a href="tel:+33784057375" class="nav-phone">+33 (0)7 84 05 73 75</a>
       </div>
 
       @if(count($languages) > 1)
@@ -101,12 +103,12 @@
   </nav>
 
   <div class="nav-drawer-footer">
-    <a href="tel:+33782085117" class="nav-drawer-phone">
+    <a href="tel:+33784057375" class="nav-drawer-phone">
       <img src="{{ asset('images/thierry.jpeg') }}" alt="Thierry Sudol" class="nav-person-avatar">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
       </svg>
-      +33 (0)7 82 08 51 17
+      +33 (0)7 84 05 73 75
     </a>
 
     @if(count($languages) > 1)

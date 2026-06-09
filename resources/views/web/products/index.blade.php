@@ -5,15 +5,15 @@
     : 'Product catalogue — Fab Sourcing')
 
 @section('description', $lang === 'fr'
-    ? 'Structures métalliques, escaliers, garde-corps, bardages et plus encore. Fabrication sur mesure aux normes européennes en Bulgarie et en Roumanie.'
-    : 'Steel structures, stairs, railings, cladding and more. Custom fabrication to European standards in Bulgaria and Romania.')
+    ? 'Structures métalliques, escaliers, garde-corps, bardages et plus encore. Fabrication sur mesure aux normes européennes en Bulgarie.'
+    : 'Steel structures, stairs, railings, cladding and more. Custom fabrication to European standards in Bulgaria.')
 
 @push('seo')
 <x-seo
   :title="$lang === 'fr' ? 'Notre Catalogue — Fab Sourcing' : 'Our Catalogue — Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Catalogue de produits métalliques fabriqués en Bulgarie et en Roumanie : structures, escaliers, garde-corps, menuiseries, bardages et plus.'
-    : 'Catalogue of metalwork products manufactured in Bulgaria and Romania: structures, stairs, railings, joinery, cladding and more.'"
+    ? 'Catalogue de produits métalliques fabriqués en Bulgarie : structures, escaliers, garde-corps, menuiseries, bardages et plus.'
+    : 'Catalogue of metalwork products manufactured in Bulgaria: structures, stairs, railings, joinery, cladding and more.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -36,15 +36,15 @@
       </div>
       <h1 class="h-1">
         @if($lang === 'fr')
-          Notre <em>catalogue</em>
+          Fabrication métallique<br><em>sur mesure</em>
         @else
-          Our <em>catalogue</em>
+          Custom metal<br><em>fabrication</em>
         @endif
       </h1>
       <p class="lede" style="margin-top:24px">
         {{ $lang === 'fr'
-          ? 'Neuf familles de produits métalliques fabriqués sur mesure en Bulgarie et en Roumanie, selon vos plans et les normes européennes en vigueur.'
-          : 'Nine families of custom metal products manufactured in Bulgaria and Romania, according to your specifications and applicable European standards.' }}
+          ? 'Dix familles de produits métalliques fabriqués sur mesure en Bulgarie, selon vos plans et les normes européennes en vigueur.'
+          : 'Ten families of custom metal products manufactured in Bulgaria, according to your specifications and applicable European standards.' }}
       </p>
     </div>
   </div>

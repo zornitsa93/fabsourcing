@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'Fab Sourcing — Outsourcing industriel en Bulgarie & Roumanie')</title>
-  <meta name="description" content="@yield('description', 'Externalisez votre production industrielle en Bulgarie et Roumanie. Qualité européenne, coûts réduits, délais courts.')">
+  <title>@yield('title', 'Fab Sourcing — Outsourcing industriel en Bulgarie')</title>
+  <meta name="description" content="@yield('description', 'Externalisez votre production industrielle en Bulgarie. Qualité européenne, coûts réduits, délais courts.')">
 
   @stack('seo')
 

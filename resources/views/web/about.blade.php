@@ -5,15 +5,15 @@
     : 'About Fab Sourcing — Industrial Subcontracting')
 
 @section('description', $lang === 'fr'
-    ? 'Fab Sourcing, expert en sourcing industriel en Bulgarie et Roumanie. Nous accompagnons PME, groupes internationaux et bureaux d\'études dans l\'externalisation de leur production.'
-    : 'Fab Sourcing, industrial sourcing expert in Bulgaria and Romania. We support SMEs, international groups and engineering offices in outsourcing their production.')
+    ? 'Fab Sourcing, expert en sourcing industriel en Bulgarie. Nous accompagnons PME, groupes internationaux et bureaux d\'études dans l\'externalisation de leur production.'
+    : 'Fab Sourcing, industrial sourcing expert in Bulgaria. We support SMEs, international groups and engineering offices in outsourcing their production.')
 
 @push('seo')
 <x-seo
   :title="$lang === 'fr' ? 'À propos — Fab Sourcing' : 'About — Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Fab Sourcing est spécialisé dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie ou en Roumanie.'
-    : 'Fab Sourcing specialises in helping French companies outsource their production to Bulgaria or Romania.'"
+    ? 'Fab Sourcing est spécialisé dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie.'
+    : 'Fab Sourcing specialises in helping French companies outsource their production to Bulgaria.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -46,8 +46,8 @@
       <div>
         <p class="lede">
           {{ $lang === 'fr'
-            ? 'Nous sommes spécialisés dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie ou en Roumanie.'
-            : 'We specialise in helping French companies outsource their production to Bulgaria or Romania.' }}
+            ? 'Nous sommes spécialisés dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie.'
+            : 'We specialise in helping French companies outsource their production to Bulgaria.' }}
         </p>
       </div>
     </div>

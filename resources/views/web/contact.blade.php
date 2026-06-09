@@ -12,8 +12,8 @@
 <x-seo
   :title="$lang === 'fr' ? 'Contact — Fab Sourcing' : 'Contact — Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Contactez Fab Sourcing pour externaliser votre production métallurgique en Bulgarie et en Roumanie. Réponse personnelle sous 48h.'
-    : 'Contact Fab Sourcing to outsource your metalwork production to Bulgaria and Romania. Personal reply within 48 hours.'"
+    ? 'Contactez Fab Sourcing pour externaliser votre production métallurgique en Bulgarie. Réponse personnelle sous 48h.'
+    : 'Contact Fab Sourcing to outsource your metalwork production to Bulgaria. Personal reply within 48 hours.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -35,7 +35,7 @@
     "@type": "PostalAddress",
     "addressCountry": "FR"
   },
-  "areaServed": ["BG", "RO"],
+  "areaServed": ["BG"],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
@@ -83,6 +83,26 @@
 
       {{-- Left: form --}}
       <div class="contact-form-col">
+
+        {{-- Free study intro block --}}
+        <div class="reveal" style="margin-bottom:40px; padding:28px 32px; background:#f4f6f9; border-radius:16px; border-left:3px solid #2b62d9">
+          <p class="body" style="margin:0 0 12px; font-weight:600; color:#0f1e3d; font-size:18px">
+            {{ $lang === 'fr'
+              ? 'Vous avez un projet en métallurgie ou fabrication industrielle ?'
+              : 'Do you have a metalwork or industrial manufacturing project?' }}
+          </p>
+          <p class="body" style="margin:0 0 8px">
+            📩 {{ $lang === 'fr' ? 'Contactez-nous pour une étude gratuite :' : 'Contact us for a free study:' }}
+          </p>
+          <ul style="margin:0 0 12px; padding-left:22px; line-height:1.7">
+            <li>{{ $lang === 'fr' ? 'Analyse technique' : 'Technical analysis' }}</li>
+            <li>{{ $lang === 'fr' ? 'Estimation de coûts' : 'Cost estimate' }}</li>
+            <li>{{ $lang === 'fr' ? 'Proposition de partenaires' : 'Partner proposals' }}</li>
+          </ul>
+          <p class="body" style="margin:0; font-weight:600; color:#0f1e3d">
+            👉 {{ $lang === 'fr' ? 'Réponse sous 48h' : 'Reply within 48h' }}
+          </p>
+        </div>
 
         @if(session('contact_sent'))
           <div class="form-success" style="margin-bottom:40px">
@@ -193,13 +213,13 @@
           </div>
 
           <div class="contact-details">
-            <a href="tel:+33782085117" class="contact-detail">
+            <a href="tel:+33784057375" class="contact-detail">
               <span class="contact-detail-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                 </svg>
               </span>
-              +33 (0)7 82 08 51 17
+              +33 (0)7 84 05 73 75
             </a>
             <a href="mailto:tsudol.fabtec@yahoo.com" class="contact-detail">
               <span class="contact-detail-icon">

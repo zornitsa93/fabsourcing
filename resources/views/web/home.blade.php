@@ -2,7 +2,7 @@
 
 @php
   $metaTitle   = $page?->getTranslation('meta_title', $lang, false)
-               ?: ($lang === 'fr' ? 'Fab Sourcing — Sous-traitance industrielle en Bulgarie et en Roumanie' : 'Fab Sourcing — Industrial Outsourcing in Bulgaria and Romania');
+               ?: ($lang === 'fr' ? 'Fab Sourcing — Sous-traitance industrielle en Bulgarie' : 'Fab Sourcing — Industrial Outsourcing in Bulgaria');
   $metaDesc    = $page?->getTranslation('meta_description', $lang, false)
                ?: ($lang === 'fr' ? "Externalisez votre production métallurgique en Europe de l'Est. Qualité aux normes européennes, jusqu'à 30–50 % d'économies, délais maîtrisés." : 'Outsource your metalwork production to Eastern Europe. European-standard quality, up to 30–50% savings, controlled lead times.');
   $heroHeading = $page?->getTranslation('hero_heading', $lang, false)
@@ -131,6 +131,98 @@
 </div>
 
 {{-- ═══════════════════════════════════════════════════
+     1b. LES ATOUTS DE LA BULGARIE
+══════════════════════════════════════════════════════ --}}
+@php
+$bulgariaAssets = $lang === 'fr' ? [
+  ['label' => 'Compétences techniques éprouvées', 'sub' => "Tradition industrielle héritée de l'ère soviétique, formations techniques solides, maîtrise des procédés de découpe, soudure et usinage"],
+  ['label' => 'Proximité géographique',           'sub' => "3–7 jours de transport routier vers la France, pas de décalage horaire majeur, facilité d'audit sur site"],
+  ['label' => 'Cadre réglementaire UE',           'sub' => "Normes CE, directives européennes, protection de la propriété intellectuelle dans le cadre juridique communautaire"],
+  ['label' => 'Flexibilité de production',         'sub' => "Capacité d'absorber les pics d'activité, volumes variables et séries limitées sans investissement industriel de votre part"],
+] : [
+  ['label' => 'Proven technical skills', 'sub' => 'Industrial tradition inherited from the Soviet era, solid technical training, mastery of cutting, welding and machining processes'],
+  ['label' => 'Geographic proximity',    'sub' => '3–7 days of road transport to France, no major time difference, easy on-site auditing'],
+  ['label' => 'EU regulatory framework', 'sub' => 'CE standards, European directives, intellectual property protection within the EU legal framework'],
+  ['label' => 'Production flexibility',   'sub' => 'Ability to absorb activity peaks, variable volumes and limited series with no industrial investment on your part'],
+];
+@endphp
+<section class="section">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">{{ $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria' }}</div>
+        <h2 class="h-2" style="margin-top:16px">
+          @if($lang === 'fr')
+            Les atouts de la <em>Bulgarie</em>
+          @else
+            The advantages of <em>Bulgaria</em>
+          @endif
+        </h2>
+      </div>
+      <div class="section-head-right">
+        <p class="lede">
+          {{ $lang === 'fr'
+            ? "Des avantages structurels durables — pas une simple aubaine conjoncturelle — qui expliquent l'attrait croissant de cette région pour la sous-traitance industrielle."
+            : "Durable structural advantages — not a mere short-term windfall — that explain this region's growing appeal for industrial subcontracting." }}
+        </p>
+      </div>
+    </div>
+
+    {{-- Highlighted stat card --}}
+    <div class="reveal" style="margin-top:8px; background:#0f1e3d; color:#fff; border-radius:18px; padding:36px 40px; display:flex; flex-wrap:wrap; align-items:center; gap:32px">
+      <div style="flex:0 0 auto">
+        <div class="stat-value" style="color:#fff; line-height:1">20–50<sup>%</sup></div>
+      </div>
+      <div style="flex:1 1 320px">
+        <h3 style="font-size:22px; margin:0 0 8px; color:#fff">
+          {{ $lang === 'fr' ? "d'économies vs Europe de l'Ouest" : 'savings vs Western Europe' }}
+        </h3>
+        <p style="margin:0; color:rgba(255,255,255,0.82); line-height:1.6">
+          {{ $lang === 'fr'
+            ? "Coûts de main-d'œuvre 40–60 % inférieurs à la France ou l'Allemagne, avec productivité équivalente et maîtrise des procédés industriels."
+            : 'Labour costs 40–60% lower than France or Germany, with equivalent productivity and command of industrial processes.' }}
+        </p>
+      </div>
+    </div>
+
+    {{-- Other key advantages --}}
+    <h3 style="margin-top:40px; font-size:20px; font-weight:700; color:#0f1e3d">
+      {{ $lang === 'fr' ? 'Autres atouts clés :' : 'Other key advantages:' }}
+    </h3>
+
+    <div class="why-teaser-points reveal" style="margin-top:20px">
+      @foreach($bulgariaAssets as $pt)
+        <div class="why-teaser-point">
+          <svg class="why-teaser-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10.5l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="why-teaser-label">{{ $pt['label'] }}</div>
+            <div style="font-size:14px; color:#4a5568; margin-top:4px; line-height:1.55">{{ $pt['sub'] }}</div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+
+    {{-- Closing lines --}}
+    <div class="reveal" style="margin-top:36px; display:flex; flex-direction:column; gap:14px">
+      <p class="body" style="margin:0; color:#0f1e3d; font-weight:600">
+        👉 {{ $lang === 'fr'
+          ? "Notre objectif : réduire vos coûts tout en garantissant qualité, traçabilité et respect des délais."
+          : 'Our goal: reduce your costs while guaranteeing quality, traceability and on-time delivery.' }}
+      </p>
+      <p class="body" style="margin:0; color:#4a5568; line-height:1.6">
+        📊 {{ $lang === 'fr'
+          ? "Aujourd'hui, plus de 70% des entreprises européennes ayant recours à l'externalisation choisissent des pays européens pour leur production, notamment pour optimiser les coûts et la logistique (European Commission)"
+          : 'Today, more than 70% of European companies that outsource choose European countries for their production, notably to optimise costs and logistics (European Commission)' }}
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{{-- ═══════════════════════════════════════════════════
      2. SERVICES PREVIEW
 ══════════════════════════════════════════════════════ --}}
 <section class="section">
@@ -246,8 +338,8 @@ $teaserPoints = $lang === 'fr' ? [
         </h2>
         <p class="body" style="margin-top:16px; color:#4a5568">
           {{ $lang === 'fr'
-            ? "Ateliers partenaires en Bulgarie et Roumanie — normes UE, livraison en 3 à 4 jours, coûts de main-d'œuvre 40–60 % inférieurs."
-            : 'Partner workshops in Bulgaria and Romania — EU standards, 3–4 day delivery, labour costs 40–60% lower.' }}
+            ? "Ateliers partenaires en Bulgarie — normes UE, livraison en 3 à 4 jours, coûts de main-d'œuvre 40–60 % inférieurs."
+            : 'Partner workshops in Bulgaria — EU standards, 3–4 day delivery, labour costs 40–60% lower.' }}
         </p>
         <div style="margin-top:28px">
           <a href="{{ route('why', $lang) }}" class="btn btn-primary">
@@ -301,7 +393,7 @@ $teaserPoints = $lang === 'fr' ? [
           {{ $lang === 'fr' ? 'Demander un devis gratuit' : 'Request a free quote' }}
           <span class="arrow">→</span>
         </a>
-        <a href="tel:+33782085117" class="btn-link">+33 (0)7 82 08 51 17</a>
+        <a href="tel:+33784057375" class="btn-link">+33 (0)7 84 05 73 75</a>
       </div>
     </div>
   </div>

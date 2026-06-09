@@ -32,8 +32,8 @@ class ContentSeeder extends Seeder
             9 => [
                 'title'            => ['fr' => 'Accueil', 'en' => 'Home'],
                 'meta_title'       => [
-                    'fr' => 'Outsourcing industriel en Bulgarie & Roumanie | Métallerie & fabrication acier',
-                    'en' => 'Industrial Outsourcing in Bulgaria & Romania | Metalwork & Steel Fabrication',
+                    'fr' => 'Outsourcing industriel en Bulgarie | Métallerie & fabrication acier',
+                    'en' => 'Industrial Outsourcing in Bulgaria | Metalwork & Steel Fabrication',
                 ],
                 'meta_description' => [
                     'fr' => 'Externalisez votre production industrielle en Europe de l\'Est. Métallerie, structures acier, escaliers, garde-corps. Qualité UE, coûts réduits.',
@@ -62,8 +62,8 @@ class ContentSeeder extends Seeder
                     'en' => 'Why Source from Eastern Europe? | Fab Sourcing',
                 ],
                 'meta_description' => [
-                    'fr' => 'Bulgarie et Roumanie : qualité européenne certifiée, coûts réduits de 40 à 60 %. Découvrez les avantages de la sous-traitance en Europe de l\'Est.',
-                    'en' => 'Bulgaria and Romania: certified European quality, 40–60% cost reduction. Discover the benefits of Eastern European industrial subcontracting.',
+                    'fr' => 'Bulgarie : qualité européenne certifiée, coûts réduits de 40 à 60 %. Découvrez les avantages de la sous-traitance en Europe de l\'Est.',
+                    'en' => 'Bulgaria: certified European quality, 40–60% cost reduction. Discover the benefits of Eastern European industrial subcontracting.',
                 ],
                 'published'        => true,
             ],
@@ -119,7 +119,9 @@ class ContentSeeder extends Seeder
                 ],
                 'published'        => true,
             ],
-            // mentions-legales (id=7) — add EN translation of existing FR content
+            // mentions-legales (id=7) — content is owned by LegalPagesSeeder (keyed by slug,
+            // the expanded version with hosting/credits placeholders). Only meta is set here so
+            // this seeder no longer overrides that content with an older, shorter copy.
             7 => [
                 'title'            => ['fr' => 'Mentions légales', 'en' => 'Legal Notice'],
                 'meta_title'       => [
@@ -129,10 +131,6 @@ class ContentSeeder extends Seeder
                 'meta_description' => [
                     'fr' => 'Mentions légales du site fab-sourcing.fr — Thierry Sudol, éditeur.',
                     'en' => 'Legal notice for fab-sourcing.fr — Thierry Sudol, publisher.',
-                ],
-                'content' => [
-                    'fr' => '<h2>Éditeur du site</h2><p>Fab Sourcing — Thierry Sudol<br>1, route Neuve<br>24150 Saint-Capraise-de-Lalinde<br>France</p><p>Email : tsudol.fabtec@yahoo.com<br>Téléphone : +33 (0)7 82 08 51 17</p><h2>Hébergement</h2><p>Ce site est hébergé par un prestataire établi au sein de l\'Union Européenne.</p><h2>Propriété intellectuelle</h2><p>L\'ensemble des contenus présents sur ce site (textes, images, graphiques) sont la propriété exclusive de Fab Sourcing, sauf mention contraire. Toute reproduction, diffusion ou utilisation sans autorisation préalable est interdite.</p><h2>Responsabilité</h2><p>Fab Sourcing s\'efforce de fournir des informations exactes et à jour. Toutefois, la société ne saurait être tenue responsable des erreurs ou omissions, ni de tout préjudice découlant de l\'utilisation des informations publiées.</p>',
-                    'en' => '<h2>Site Publisher</h2><p>Fab Sourcing — Thierry Sudol<br>1, route Neuve<br>24150 Saint-Capraise-de-Lalinde<br>France</p><p>Email: tsudol.fabtec@yahoo.com<br>Phone: +33 (0)7 82 08 51 17</p><h2>Hosting</h2><p>This website is hosted by a provider established within the European Union.</p><h2>Intellectual Property</h2><p>All content on this site (text, images, graphics) is the exclusive property of Fab Sourcing unless otherwise stated. Any reproduction, distribution or use without prior authorisation is prohibited.</p><h2>Liability</h2><p>Fab Sourcing endeavours to provide accurate and up-to-date information. However, the company cannot be held liable for errors or omissions, or for any loss arising from the use of published information.</p>',
                 ],
                 'published'        => true,
             ],
@@ -176,7 +174,7 @@ class ContentSeeder extends Seeder
             1 => [
                 'title' => 'Why Outsource Manufacturing to Eastern Europe?',
                 'excerpt' => 'As production costs rise across Western Europe, Eastern Europe has emerged as a premier industrial outsourcing destination. Here is why more and more French manufacturers are making the move.',
-                'body' => '<h2>A Structural Response to Cost Pressure</h2><p>For several years, French manufacturers have faced a difficult equation: maintaining production quality while keeping a lid on relentlessly rising costs. Labour, social charges, energy, raw materials — every line item is squeezing margins further. Outsourcing to Eastern Europe has emerged as a structural answer to this pressure.</p><h2>Real Savings Without Quality Compromise</h2><p>In Bulgaria and Romania, skilled metalwork labour costs are 40–60% lower than in France or Germany. This differential translates directly into lower unit costs for fabricated parts and steel assemblies. Yet these savings do not come at the expense of quality: partner workshops operate to the same European requirements (CE compliance, traceability, quality standards) as their Western counterparts.</p><h2>Geographic Proximity — A Decisive Advantage</h2><p>Unlike Far East subcontracting, Eastern Europe offers invaluable proximity. Lead times are measured in days, not weeks. Delivery to France takes 3–4 days by road. This accessibility facilitates workshop visits, on-site quality audits and rapid adjustments during production.</p><h2>A Shared Regulatory Framework</h2><p>EU member states share the same legal and regulatory framework: CE compliance, intellectual property protection, harmonised labour law. This alignment reduces contractual risk and simplifies the administrative management of international orders.</p><h2>Local Expertise Makes the Difference</h2><p>The success of any outsourcing relationship hinges largely on the quality of the intermediary. Fab Sourcing selects and qualifies partner workshops against strict criteria: production capacity, standards compliance, financial stability, and client references. Our engineers oversee every order from technical consultation through to delivery.</p>',
+                'body' => '<h2>A Structural Response to Cost Pressure</h2><p>For several years, French manufacturers have faced a difficult equation: maintaining production quality while keeping a lid on relentlessly rising costs. Labour, social charges, energy, raw materials — every line item is squeezing margins further. Outsourcing to Eastern Europe has emerged as a structural answer to this pressure.</p><h2>Real Savings Without Quality Compromise</h2><p>In Bulgaria, skilled metalwork labour costs are 40–60% lower than in France or Germany. This differential translates directly into lower unit costs for fabricated parts and steel assemblies. Yet these savings do not come at the expense of quality: partner workshops operate to the same European requirements (CE compliance, traceability, quality standards) as their Western counterparts.</p><h2>Geographic Proximity — A Decisive Advantage</h2><p>Unlike Far East subcontracting, Eastern Europe offers invaluable proximity. Lead times are measured in days, not weeks. Delivery to France takes 3–4 days by road. This accessibility facilitates workshop visits, on-site quality audits and rapid adjustments during production.</p><h2>A Shared Regulatory Framework</h2><p>EU member states share the same legal and regulatory framework: CE compliance, intellectual property protection, harmonised labour law. This alignment reduces contractual risk and simplifies the administrative management of international orders.</p><h2>Local Expertise Makes the Difference</h2><p>The success of any outsourcing relationship hinges largely on the quality of the intermediary. Fab Sourcing selects and qualifies partner workshops against strict criteria: production capacity, standards compliance, financial stability, and client references. Our engineers oversee every order from technical consultation through to delivery.</p>',
                 'tags' => ['subcontracting', 'Eastern Europe', 'outsourcing', 'metalwork'],
                 'meta_title' => 'Why Outsource Manufacturing to Eastern Europe? | Fab Sourcing',
                 'meta_description' => 'Real cost savings, EU-standard quality, and a shared regulatory framework — the case for Eastern European industrial subcontracting.',
@@ -869,8 +867,8 @@ class ContentSeeder extends Seeder
     private function seedSettings(): void
     {
         $settings = [
-            'phone'          => '+33782085117',
-            'phone_display'  => '+33 (0)7 82 08 51 17',
+            'phone'          => '+33784057375',
+            'phone_display'  => '+33 (0)7 84 05 73 75',
             'email'          => 'tsudol.fabtec@yahoo.com',
             'address'        => '1, route Neuve — 24150 St-Capraise-de-Lalinde, France',
             'company_name'   => 'fab-sourcing.fr',
