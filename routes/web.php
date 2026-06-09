@@ -10,6 +10,8 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\FaqController;
 use App\Http\Controllers\Web\LegalController;
+use App\Http\Controllers\Web\Auth\RegisterController;
+use App\Http\Controllers\Web\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,6 +72,13 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'setlocale', 'where' => ['la
     Route::get('/legal-notice',              [LegalController::class, 'mentions'])->name('legal.mentions.en');
     Route::get('/politique-confidentialite', [LegalController::class, 'privacy'])->name('legal.privacy');
     Route::get('/privacy-policy',            [LegalController::class, 'privacy'])->name('legal.privacy.en');
+
+    // Auth (registration, login, logout)
+    Route::get('/inscription',  [RegisterController::class, 'show'])->name('register');
+    Route::post('/inscription', [RegisterController::class, 'store'])->middleware('throttle:6,1')->name('register.store');
+    Route::get('/connexion',    [LoginController::class, 'show'])->name('login');
+    Route::post('/connexion',   [LoginController::class, 'login'])->middleware('throttle:6,1')->name('login.post');
+    Route::post('/deconnexion', [LoginController::class, 'logout'])->name('logout');
 });
 
 /*

@@ -23,6 +23,8 @@ class User extends Authenticatable
         'phone',
         'password',
         'locale',
+        'approved_at',
+        'gdpr_consent_at',
     ];
 
     /**
