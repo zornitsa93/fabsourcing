@@ -114,7 +114,7 @@
               @endif
             </div>
             <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->slug]) }}"
-               class="btn-link" style="display:inline-flex; align-items:center; gap:8px; margin-top:16px">
+               class="btn btn-accent" style="margin-top:16px">
               {{ $lang === 'fr' ? 'Lire l\'article' : 'Read article' }}
               <span class="arrow">→</span>
             </a>
