@@ -296,7 +296,7 @@
     <div class="article-layout">
       <div class="article-main">
         <a href="{{ route('contact', $lang) }}" class="btn btn-primary" style="font-size:16px; padding:16px 26px">
-          Demander une analyse TCO <span class="arrow">→</span>
+          Nous contacter <span class="arrow">→</span>
         </a>
         <div class="tco-next">
           <h3 style="margin:0 0 4px; font-size:20px; font-weight:700; color:#0f1e3d">Prochaines étapes :</h3>
@@ -584,7 +584,7 @@
     <div class="article-layout">
       <div class="article-main">
         <a href="{{ route('contact', $lang) }}" class="btn btn-primary" style="font-size:16px; padding:16px 26px">
-          Request a TCO analysis <span class="arrow">→</span>
+          Contact us <span class="arrow">→</span>
         </a>
         <div class="tco-next">
           <h3 style="margin:0 0 4px; font-size:20px; font-weight:700; color:#0f1e3d">Next steps:</h3>
