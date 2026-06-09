@@ -10,6 +10,7 @@ use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\FaqController;
 use App\Http\Controllers\Web\LegalController;
+use App\Http\Controllers\Web\DocumentsController;
 use App\Http\Controllers\Web\Auth\RegisterController;
 use App\Http\Controllers\Web\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +73,12 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'setlocale', 'where' => ['la
     Route::get('/legal-notice',              [LegalController::class, 'mentions'])->name('legal.mentions.en');
     Route::get('/politique-confidentialite', [LegalController::class, 'privacy'])->name('legal.privacy');
     Route::get('/privacy-policy',            [LegalController::class, 'privacy'])->name('legal.privacy.en');
+
+    // Member area — approved users only
+    Route::middleware('approved')->group(function () {
+        Route::get('/documents',                        [DocumentsController::class, 'index'])->name('member.documents');
+        Route::get('/documents/{document}/telecharger', [DocumentsController::class, 'download'])->name('member.documents.download');
+    });
 
     // Auth (registration, login, logout)
     Route::get('/inscription',  [RegisterController::class, 'show'])->name('register');
