@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\ServicesAdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactSubmissionsController;
+use App\Http\Controllers\DocumentsAdminController;
 use App\Http\Controllers\LanguagesController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PageSettingsController;
@@ -47,6 +48,8 @@ Route::get('/contact-submissions',                    [ContactSubmissionsControl
 Route::get('/contact-submissions/{contactSubmission}', [ContactSubmissionsController::class, 'show'])->name('contact-submissions.show');
 Route::post('/contact-submissions/{contactSubmission}/mark-responded', [ContactSubmissionsController::class, 'markResponded'])->name('contact-submissions.mark-responded');
 Route::delete('/contact-submissions/{contactSubmission}', [ContactSubmissionsController::class, 'destroy'])->name('contact-submissions.destroy');
+
+Route::resource('documents', DocumentsAdminController::class)->except(['show']);
 
 // Account approval
 Route::get('/accounts',                    [AccountsController::class, 'index'])->name('accounts.index');

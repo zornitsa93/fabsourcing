@@ -24,6 +24,7 @@
       <li><a href="{{ route('blog-posts.index') }}" class="{{ aNavActive($current, 'blog-posts.') }}">Блог</a></li>
       <li><a href="{{ route('services-admin.index') }}" class="{{ aNavActive($current, 'services-admin.') }}">Услуги</a></li>
       <li><a href="{{ route('contact-submissions.index') }}" class="{{ aNavActive($current, 'contact-submissions.') }}">Контакт форми</a></li>
+      <li><a href="{{ route('documents.index') }}" class="{{ aNavActive($current, 'documents.') }}">Documents</a></li>
       @php($pendingAccounts = \App\Models\User::whereNull('approved_at')->count())
       <li><a href="{{ route('accounts.index') }}" class="{{ aNavActive($current, 'accounts.') }}">Comptes @if($pendingAccounts)<span style="display:inline-flex;align-items:center;justify-content:center;background:#2b62d9;color:#fff;border-radius:999px;font-size:12px;font-weight:600;padding:2px 8px;margin-left:6px;vertical-align:middle">{{ $pendingAccounts }}</span>@endif</a></li>
     </ul>
