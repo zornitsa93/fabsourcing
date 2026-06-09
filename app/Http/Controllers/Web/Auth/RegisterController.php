@@ -22,8 +22,7 @@ class RegisterController extends Controller {
         ]);
         $user->forceFill(['gdpr_consent_at' => now()])->save();
 
-        // A later task wires flag-gated notifications here:
-        // \App\Support\AccountNotifications::pending($user);
+        \App\Support\AccountNotifications::pending($user);
 
         return redirect()->route('login', $lang)->with('registered', true);
     }

@@ -13,8 +13,7 @@ class AccountsController extends Controller {
     }
     public function approve(User $account): RedirectResponse {
         $account->forceFill(['approved_at' => now(), 'approved_by' => Auth::guard('admin')->id()])->save();
-        // A later task wires the flag-gated "approved" email here:
-        // \App\Support\AccountNotifications::approved($account);
+        \App\Support\AccountNotifications::approved($account);
         return back()->with('status', 'approved');
     }
     public function revoke(User $account): RedirectResponse {
