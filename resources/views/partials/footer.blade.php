@@ -23,6 +23,8 @@
           <li><a href="{{ route('why',      $lang) }}">{{ $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria' }}</a></li>
           <li><a href="{{ route('method',   $lang) }}">{{ $lang === 'fr' ? 'Méthode'        : 'Method' }}</a></li>
           <li><a href="{{ route('about',    $lang) }}">{{ $lang === 'fr' ? 'À propos'       : 'About' }}</a></li>
+          <li><a href="{{ route('blog',     $lang) }}">Blog</a></li>
+          <li><a href="{{ route('faq',      $lang) }}">FAQ</a></li>
           <li><a href="{{ route('contact',  $lang) }}">Contact</a></li>
         </ul>
       </div>

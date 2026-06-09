@@ -17,9 +17,7 @@
           ['route' => 'products', 'route_en' => 'products.en','label' => $lang === 'fr' ? 'Produits'       : 'Products'],
           ['route' => 'why',      'route_en' => 'why.en',     'label' => $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria'],
           ['route' => 'method',   'route_en' => 'method.en',  'label' => $lang === 'fr' ? 'Méthode'        : 'Method'],
-          ['route' => 'about',    'route_en' => 'about.en',   'label' => $lang === 'fr' ? 'À propos'       : 'About'],
           ['route' => 'blog',     'route_en' => null,         'label' => 'Blog'],
-          ['route' => 'faq',      'route_en' => 'faq',        'label' => 'FAQ'],
           ['route' => 'contact',  'route_en' => null,         'label' => 'Contact'],
         ];
       @endphp
