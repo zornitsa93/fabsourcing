@@ -71,12 +71,12 @@ class ContentSeeder extends Seeder
             4 => [
                 'title'            => ['fr' => 'Méthodologie', 'en' => 'Methodology'],
                 'meta_title'       => [
-                    'fr' => 'Notre méthodologie en 7 étapes | Fab Sourcing',
-                    'en' => 'Our 7-Step Methodology | Fab Sourcing',
+                    'fr' => 'Notre méthodologie en 8 étapes | Fab Sourcing',
+                    'en' => 'Our 8-Step Methodology | Fab Sourcing',
                 ],
                 'meta_description' => [
-                    'fr' => 'De l\'analyse de votre besoin à la livraison : découvrez notre processus en 7 étapes pour une externalisation industrielle sans risque.',
-                    'en' => 'From needs analysis to delivery: discover our 7-step process for risk-free industrial outsourcing.',
+                    'fr' => 'De l\'analyse de votre besoin à la livraison : découvrez notre processus en 8 étapes pour une externalisation industrielle sans risque.',
+                    'en' => 'From needs analysis to delivery: discover our 8-step process for risk-free industrial outsourcing.',
                 ],
                 'published'        => true,
             ],

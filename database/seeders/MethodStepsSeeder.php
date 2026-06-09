@@ -42,12 +42,18 @@ class MethodStepsSeeder extends Seeder
             [
                 'number'     => '06',
                 'sort_order' => 6,
-                'title'      => ['fr' => 'Contrôle qualité',         'en' => 'Quality control'],
-                'description'=> ['fr' => 'Inspections in-process et finales, conformité aux normes européennes avant expédition, avec dossier qualité complet et traçabilité matière.', 'en' => 'In-process and final inspections, compliance with European standards before shipping, with a complete quality file and material traceability.'],
+                'title'      => ['fr' => 'Rapport d\'avancement de fabrication', 'en' => 'Manufacturing progress report'],
+                'description'=> ['fr' => 'Décrivant l\'état d\'avancement des opérations de fabrication, les travaux réalisés, les activités en cours et les étapes restantes afin d\'assurer le respect du planning, de la qualité et des exigences du projet.', 'en' => 'Describing the progress of manufacturing operations, the work completed, the activities in progress and the remaining steps, to ensure compliance with the schedule, quality and project requirements.'],
             ],
             [
                 'number'     => '07',
                 'sort_order' => 7,
+                'title'      => ['fr' => 'Contrôle qualité',         'en' => 'Quality control'],
+                'description'=> ['fr' => 'Inspections in-process et finales, conformité aux normes européennes avant expédition, avec dossier qualité complet et traçabilité matière.', 'en' => 'In-process and final inspections, compliance with European standards before shipping, with a complete quality file and material traceability.'],
+            ],
+            [
+                'number'     => '08',
+                'sort_order' => 8,
                 'title'      => ['fr' => 'Livraison',                'en' => 'Delivery'],
                 'description'=> ['fr' => 'Transport optimisé vers la France (3–4 jours par route), livraison sur site ou en entreposage selon vos besoins logistiques.', 'en' => 'Optimised transport to France (3–4 days by road), delivery on site or to storage according to your logistics needs.'],
             ],
