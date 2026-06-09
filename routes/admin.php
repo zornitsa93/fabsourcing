@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\ServicesAdminController;
 use App\Http\Controllers\BlogController;
@@ -46,3 +47,9 @@ Route::get('/contact-submissions',                    [ContactSubmissionsControl
 Route::get('/contact-submissions/{contactSubmission}', [ContactSubmissionsController::class, 'show'])->name('contact-submissions.show');
 Route::post('/contact-submissions/{contactSubmission}/mark-responded', [ContactSubmissionsController::class, 'markResponded'])->name('contact-submissions.mark-responded');
 Route::delete('/contact-submissions/{contactSubmission}', [ContactSubmissionsController::class, 'destroy'])->name('contact-submissions.destroy');
+
+// Account approval
+Route::get('/accounts',                    [AccountsController::class, 'index'])->name('accounts.index');
+Route::post('/accounts/{account}/approve', [AccountsController::class, 'approve'])->name('accounts.approve');
+Route::post('/accounts/{account}/revoke',  [AccountsController::class, 'revoke'])->name('accounts.revoke');
+Route::delete('/accounts/{account}',       [AccountsController::class, 'destroy'])->name('accounts.destroy');
