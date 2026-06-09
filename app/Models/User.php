@@ -19,7 +19,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'company',
+        'phone',
         'password',
+        'locale',
     ];
 
     /**
@@ -39,5 +42,12 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'approved_at'       => 'datetime',
+        'gdpr_consent_at'   => 'datetime',
     ];
+
+    public function isApproved(): bool
+    {
+        return $this->approved_at !== null;
+    }
 }
