@@ -43,8 +43,8 @@
       </h1>
       <p class="lede" style="margin-top:24px">
         {{ $lang === 'fr'
-          ? 'Dix familles de produits métalliques fabriqués sur mesure en Bulgarie, selon vos plans et les normes européennes en vigueur.'
-          : 'Ten families of custom metal products manufactured in Bulgaria, according to your specifications and applicable European standards.' }}
+          ? 'Familles de produits métalliques fabriqués sur mesure en Bulgarie, selon vos plans et les normes européennes en vigueur.'
+          : 'Families of custom metal products manufactured in Bulgaria, according to your specifications and applicable European standards.' }}
       </p>
     </div>
   </div>
