@@ -52,6 +52,13 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'documents' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/documents'),
+            'visibility' => 'private',
+            'throw'      => false,
+        ],
+
     ],
 
     /*
