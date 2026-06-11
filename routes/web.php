@@ -74,18 +74,22 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'setlocale', 'where' => ['la
     Route::get('/politique-confidentialite', [LegalController::class, 'privacy'])->name('legal.privacy');
     Route::get('/privacy-policy',            [LegalController::class, 'privacy'])->name('legal.privacy.en');
 
-    // Member area — approved users only
-    Route::middleware('approved')->group(function () {
-        Route::get('/documents',                        [DocumentsController::class, 'index'])->name('member.documents');
-        Route::get('/documents/{document}/telecharger', [DocumentsController::class, 'download'])->name('member.documents.download');
-    });
+    // Documents / Téléchargements feature — registered but gated behind DOCUMENTS_ENABLED.
+    // When disabled, every page below returns 404 (route names still resolve for links).
+    Route::middleware('documents.enabled')->group(function () {
+        // Member area — approved users only
+        Route::middleware('approved')->group(function () {
+            Route::get('/documents',                        [DocumentsController::class, 'index'])->name('member.documents');
+            Route::get('/documents/{document}/telecharger', [DocumentsController::class, 'download'])->name('member.documents.download');
+        });
 
-    // Auth (registration, login, logout)
-    Route::get('/inscription',  [RegisterController::class, 'show'])->name('register');
-    Route::post('/inscription', [RegisterController::class, 'store'])->middleware('throttle:6,1')->name('register.store');
-    Route::get('/connexion',    [LoginController::class, 'show'])->name('login');
-    Route::post('/connexion',   [LoginController::class, 'login'])->middleware('throttle:6,1')->name('login.post');
-    Route::post('/deconnexion', [LoginController::class, 'logout'])->name('logout');
+        // Auth (registration, login, logout)
+        Route::get('/inscription',  [RegisterController::class, 'show'])->name('register');
+        Route::post('/inscription', [RegisterController::class, 'store'])->middleware('throttle:6,1')->name('register.store');
+        Route::get('/connexion',    [LoginController::class, 'show'])->name('login');
+        Route::post('/connexion',   [LoginController::class, 'login'])->middleware('throttle:6,1')->name('login.post');
+        Route::post('/deconnexion', [LoginController::class, 'logout'])->name('logout');
+    });
 });
 
 /*

@@ -1,15 +1,15 @@
 <?php
 namespace App\Http\Controllers\Web\Auth;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\WebPagesController;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
-class RegisterController extends Controller {
+class RegisterController extends WebPagesController {
     public function show(string $lang): View {
-        return view('web.auth.register', ['lang' => $lang]);
+        return view('web.auth.register', $this->commonForWebPages($lang));
     }
     public function store(RegisterRequest $request, string $lang): RedirectResponse {
         $user = User::create([

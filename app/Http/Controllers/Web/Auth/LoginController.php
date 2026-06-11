@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers\Web\Auth;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\WebPagesController;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
-class LoginController extends Controller {
+class LoginController extends WebPagesController {
     public function show(string $lang): View {
-        return view('web.auth.login', ['lang' => $lang]);
+        return view('web.auth.login', $this->commonForWebPages($lang));
     }
     public function login(Request $request, string $lang): RedirectResponse {
         $data = $request->validate([

@@ -25,11 +25,13 @@
           <li><a href="{{ route('about',    $lang) }}">{{ $lang === 'fr' ? 'À propos'       : 'About' }}</a></li>
           <li><a href="{{ route('blog',     $lang) }}">Blog</a></li>
           <li><a href="{{ route('faq',      $lang) }}">FAQ</a></li>
+          @if(config('documents.enabled'))
           @auth
           <li><a href="{{ route('member.documents', $lang) }}">{{ $lang === 'fr' ? 'Documents' : 'Documents' }}</a></li>
           @else
           <li><a href="{{ route('login', $lang) }}">{{ $lang === 'fr' ? 'Documents / Téléchargements' : 'Documents / Downloads' }}</a></li>
           @endauth
+          @endif
           <li><a href="{{ route('contact',  $lang) }}">Contact</a></li>
         </ul>
       </div>
