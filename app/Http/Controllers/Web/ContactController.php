@@ -38,7 +38,7 @@ class ContactController extends WebPagesController
 
     public function send(Request $request, string $lang = 'fr')
     {
-        $request->validate([
+        $validated = $request->validate([
             'name'    => 'required|string|max:120',
             'company' => 'nullable|string|max:120',
             'email'   => 'required|email|max:180',
@@ -46,12 +46,10 @@ class ContactController extends WebPagesController
             'message' => 'required|string|max:3000',
         ]);
 
-        $submission = ContactSubmission::create(
-            $request->safe()->only(['name', 'company', 'email', 'phone', 'message'])
-        );
+        $submission = ContactSubmission::create($validated);
 
         try {
-            Mail::to(config('mail.from.address'))->send(new ContactSubmissionMail($submission));
+            Mail::to(config('mail.contact_to'))->send(new ContactSubmissionMail($submission));
         } catch (\Throwable) {
             // Email failure should not block the user's confirmation
         }
