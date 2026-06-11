@@ -7,6 +7,7 @@ use App\Mail\ContactSubmissionMail;
 use App\Models\ContactSubmission;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends WebPagesController
@@ -50,8 +51,9 @@ class ContactController extends WebPagesController
 
         try {
             Mail::to(config('mail.contact_to'))->send(new ContactSubmissionMail($submission));
-        } catch (\Throwable) {
-            // Email failure should not block the user's confirmation
+        } catch (\Throwable $e) {
+            // Don't block the visitor's confirmation, but record why the email failed.
+            Log::error('Contact email failed: ' . $e->getMessage(), ['submission_id' => $submission->id]);
         }
 
         session()->flash('contact_sent', true);
