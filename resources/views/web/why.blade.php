@@ -307,7 +307,7 @@
           </ol>
           <p style="margin:16px 0 0; color:#4a5568; line-height:1.6">
             Pour accélérer le processus, vous pouvez m'envoyer vos plans directement :
-            <a href="mailto:tsudol.fabtec@yahoo.com">tsudol.fabtec@yahoo.com</a>
+            <a href="mailto:thierry.sudol@fab-sourcing.fr">thierry.sudol@fab-sourcing.fr</a>
           </p>
         </div>
       </div>
@@ -595,7 +595,7 @@
           </ol>
           <p style="margin:16px 0 0; color:#4a5568; line-height:1.6">
             To speed up the process, you can send me your drawings directly:
-            <a href="mailto:tsudol.fabtec@yahoo.com">tsudol.fabtec@yahoo.com</a>
+            <a href="mailto:thierry.sudol@fab-sourcing.fr">thierry.sudol@fab-sourcing.fr</a>
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ class SiteSettingsSeeder extends Seeder
         $settings = [
             ['key' => 'phone',   'value' => '+33784057375',               'type' => 'text',  'translatable' => false],
             ['key' => 'phone_display', 'value' => '+33 (0)7 84 05 73 75', 'type' => 'text',  'translatable' => false],
-            ['key' => 'email',   'value' => 'tsudol.fabtec@yahoo.com',    'type' => 'text',  'translatable' => false],
+            ['key' => 'email',   'value' => 'thierry.sudol@fab-sourcing.fr',    'type' => 'text',  'translatable' => false],
             ['key' => 'address', 'value' => '1, route Neuve — 24150 St-Capraise-de-Lalinde, France', 'type' => 'text', 'translatable' => false],
         ];
 

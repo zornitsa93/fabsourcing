@@ -2289,7 +2289,7 @@ ls -lh public/images/logo-fab-full*.png
         <ul>
           <li><span>Thierry Sudol</span></li>
           <li><a href="tel:+33782085117">+33 (0)7 82 08 51 17</a></li>
-          <li><a href="mailto:tsudol.fabtec@yahoo.com">tsudol.fabtec@yahoo.com</a></li>
+          <li><a href="mailto:thierry.sudol@fab-sourcing.fr">thierry.sudol@fab-sourcing.fr</a></li>
         </ul>
       </div>
 

@@ -91,7 +91,7 @@ return [
     /*
     | Recipient of contact-form submissions (overridable via MAIL_CONTACT_TO).
     */
-    'contact_to' => env('MAIL_CONTACT_TO', 'tsudol.fabtec@yahoo.com'),
+    'contact_to' => env('MAIL_CONTACT_TO', 'thierry.sudol@fab-sourcing.fr'),
 
     /*
     |--------------------------------------------------------------------------

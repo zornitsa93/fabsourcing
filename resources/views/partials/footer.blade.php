@@ -51,7 +51,7 @@
         </div>
         <ul>
           <li><a href="tel:+33784057375">+33 (0)7 84 05 73 75</a></li>
-          <li><a href="mailto:tsudol.fabtec@yahoo.com">tsudol.fabtec@yahoo.com</a></li>
+          <li><a href="mailto:thierry.sudol@fab-sourcing.fr">thierry.sudol@fab-sourcing.fr</a></li>
         </ul>
       </div>
 

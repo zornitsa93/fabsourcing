@@ -39,7 +39,7 @@ class ServicesSeeder extends Seeder
                 'slug'       => 'sous-traitance',
                 'number'     => '02',
                 'col_span'   => 7,
-                'featured'   => true,
+                'featured'   => false,
                 'published'  => true,
                 'sort_order' => 2,
                 'title_fr'   => 'Sous-traitance (outsourcing)',
