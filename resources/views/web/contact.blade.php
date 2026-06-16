@@ -30,7 +30,7 @@
   "@type": "LocalBusiness",
   "name": "Fab Sourcing",
   "url": "{{ url('/') }}",
-  "logo": "{{ asset('images/logo.png') }}",
+  "logo": "{{ asset('images/logo-fab-full.png') }}",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "FR"

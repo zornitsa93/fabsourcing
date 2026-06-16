@@ -46,7 +46,7 @@
     "name": "Fab Sourcing",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ asset('images/logo.png') }}"
+      "url": "{{ asset('images/logo-fab-full.png') }}"
     }
   }
 }
