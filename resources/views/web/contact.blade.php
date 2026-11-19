@@ -12,7 +12,7 @@
 <x-seo
   :title="$lang === 'fr' ? 'Contact — Fab Sourcing' : 'Contact – Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Contactez Fab Sourcing pour externaliser votre production métallurgique en Bulgarie. Réponse personnelle sous 48h.'
+    ? 'Demandez un devis gratuit ou posez vos questions à Thierry Sudol, fondateur de Fab Sourcing. Réponse sous 48 heures.'
     : 'Request a free quote or ask Thierry Sudol your questions. Send your drawings – reply within 48 hours with a technical analysis and a first estimate.'"
   :canonical="request()->url()"
   :lang="$lang"

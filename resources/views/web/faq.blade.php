@@ -10,10 +10,10 @@
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'Questions fréquentes — Fab Sourcing' : 'FAQ – Industrial outsourcing to Bulgaria – Fab Sourcing'"
+  :title="$lang === 'fr' ? 'FAQ externalisation industrielle — Fab Sourcing' : 'FAQ – Industrial outsourcing to Bulgaria – Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Externalisation industrielle en Europe de l\'Est : généralités, technique, finances, logistique, relation et stratégie. Toutes vos questions, nos réponses.'
-    : 'Industrial outsourcing in Eastern Europe: basics, technical, financial, logistics, relationship and strategy. All your questions answered.'"
+    ? 'Toutes les réponses sur l\'externalisation industrielle en Bulgarie : qualité, coûts, délais, logistique, marquage CE et accompagnement Fab Sourcing.'
+    : 'All the answers on outsourcing metal fabrication to Bulgaria: quality, costs, lead times, logistics, CE marking and how Fab Sourcing supports you.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"

@@ -11,10 +11,10 @@
 @push('seo')
 <x-seo
   :title="$lang === 'fr'
-    ? 'Notre Méthodologie — Fab Sourcing'
+    ? 'Méthode Fab Sourcing — Sous-traitance industrielle'
     : 'Our 8-step method – Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Découvrez notre processus en 8 étapes pour une externalisation industrielle réussie en Bulgarie. De l\'analyse au suivi qualité.'
+    ? 'Notre processus en 8 étapes : analyse du besoin, étude technique, sélection fournisseur, prototype, production, rapport d\'avancement, contrôle qualité, livraison.'
     : 'Our 8-step process: needs analysis, technical study, supplier selection, prototype, production, progress report, quality control, delivery.'"
   :canonical="request()->url()"
   :lang="$lang"

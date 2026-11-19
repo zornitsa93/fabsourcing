@@ -10,9 +10,9 @@
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'À propos — Fab Sourcing' : 'About Fab Sourcing – Industrial sourcing in Bulgaria'"
+  :title="$lang === 'fr' ? 'À propos de Fab Sourcing — Sous-traitance industrielle' : 'About Fab Sourcing – Industrial sourcing in Bulgaria'"
   :description="$lang === 'fr'
-    ? 'Fab Sourcing est spécialisé dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie.'
+    ? 'Fab Sourcing, expert en sourcing industriel en Bulgarie. Nous accompagnons PME, groupes internationaux et bureaux d\'études dans l\'externalisation de leur production.'
     : 'Fab Sourcing, industrial sourcing specialist in Bulgaria. We help SMEs, international groups and engineering firms outsource their metal fabrication.'"
   :canonical="request()->url()"
   :lang="$lang"

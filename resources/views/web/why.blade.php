@@ -14,8 +14,8 @@
     ? 'Sous-traitance Bulgarie : le coût réel (TCO) — Fab Sourcing'
     : 'Subcontracting in Bulgaria: the real cost (TCO) — Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Le prix unitaire ne suffit pas. Découvrez la méthode TCO de Fab Sourcing pour comparer objectivement les offres de sous-traitance métallique en Bulgarie.'
-    : 'Unit price is not enough. Discover the Fab Sourcing TCO method for objectively comparing metal subcontracting quotes in Bulgaria.'"
+    ? 'Prix unitaire ≠ coût réel : la méthode TCO de Fab Sourcing pour comparer les offres de sous-traitance métallique en Bulgarie sur 7 postes de coût.'
+    : 'Unit price ≠ real cost: the Fab Sourcing TCO method for comparing metal subcontracting quotes in Bulgaria across 7 cost items.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
