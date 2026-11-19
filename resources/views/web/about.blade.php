@@ -199,8 +199,8 @@
         </p>
         <p class="body" style="margin-bottom:32px">
           {{ $lang === 'fr'
-            ? 'Thierry Sudol est votre interlocuteur unique chez Fab Sourcing. Il vous accompagne de la demande de devis jusqu\'à la livraison, en français, avec un suivi personnalisé de votre projet.'
-            : 'Thierry Sudol is your single point of contact at Fab Sourcing. Thierry supports you from the request for quote to delivery, in English or French, with personal follow-up of your project.' }}
+            ? 'Thierry Sudol est votre interlocuteur unique chez Fab Sourcing. Fort d\'une expérience dans les portes industrielles, les portails et la métallerie, Thierry vous accompagne de la demande de devis jusqu\'à la livraison, en français, avec un suivi personnalisé de votre projet.'
+            : 'Thierry Sudol is your single point of contact at Fab Sourcing. With a background in industrial doors, gates and metalwork, Thierry supports you from the request for quote to delivery, in English or French, with personal follow-up of your project.' }}
         </p>
         <a href="{{ route('contact', $lang) }}" class="btn btn-primary">
           {{ $lang === 'fr' ? 'Contacter Thierry' : 'Contact Thierry' }}
