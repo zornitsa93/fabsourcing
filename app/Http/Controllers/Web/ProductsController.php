@@ -8,6 +8,38 @@ use App\Models\ProductCategory;
 
 class ProductsController extends WebPagesController
 {
+    /**
+     * Old English category slugs that no longer match the category content.
+     * They stay resolvable so the old URLs can 301 to the current ones.
+     */
+    private const LEGACY_CATEGORY_SLUGS = [
+        'industrial-metal-cladding-facade' => 'balcons',               // now: metal-terraces-balconies
+        'workshop-glass-roof-partition'    => 'skid-machines-shelter', // now: machine-skids-shelters
+    ];
+
+    private function findCategory(string $slug): ProductCategory
+    {
+        $slug = self::LEGACY_CATEGORY_SLUGS[$slug] ?? $slug;
+
+        return ProductCategory::where('published', true)
+            ->where(fn ($q) => $q->where('slug', $slug)->orWhere('slug_en', $slug))
+            ->firstOrFail();
+    }
+
+    /** 301 to the canonical URL when the requested path is not exactly it (old slug, wrong language, ...). */
+    private function redirectIfNotCanonical(string $canonicalUrl)
+    {
+        $canonicalPath = trim((string) parse_url($canonicalUrl, PHP_URL_PATH), '/');
+
+        if (trim(request()->path(), '/') === $canonicalPath) {
+            return null;
+        }
+
+        $query = request()->getQueryString();
+
+        return redirect()->to(url($canonicalPath) . ($query ? '?' . $query : ''), 301);
+    }
+
     // ── /fr/produits or /en/products ─────────────────────────────────────────
     public function index(string $lang = 'fr')
     {
@@ -26,10 +58,11 @@ class ProductsController extends WebPagesController
     // ── /fr/produits/{slug} or /en/products/{slug} ────────────────────────────
     public function category(string $lang, string $categorySlug)
     {
-        $category = ProductCategory::where('slug', $categorySlug)
-            ->orWhere('slug_en', $categorySlug)
-            ->where('published', true)
-            ->firstOrFail();
+        $category = $this->findCategory($categorySlug);
+
+        if ($redirect = $this->redirectIfNotCanonical($category->getUrlForLang($lang))) {
+            return $redirect;
+        }
 
         $products = $category->products()
             ->where('published', true)
@@ -48,10 +81,7 @@ class ProductsController extends WebPagesController
     // ── /fr/produits/{cat}/{prod} or /en/products/{cat}/{prod} ────────────────
     public function detail(string $lang, string $categorySlug, string $productSlug)
     {
-        $category = ProductCategory::where('slug', $categorySlug)
-            ->orWhere('slug_en', $categorySlug)
-            ->where('published', true)
-            ->firstOrFail();
+        $category = $this->findCategory($categorySlug);
 
         $product = Product::where('product_category_id', $category->id)
             ->where(function ($q) use ($productSlug) {
@@ -59,6 +89,14 @@ class ProductsController extends WebPagesController
             })
             ->where('published', true)
             ->firstOrFail();
+
+        $canonical = $lang === 'en'
+            ? route('products.detail.en', ['lang' => 'en', 'categorySlug' => $category->slug_en ?: $category->slug, 'productSlug' => $product->slug_en ?: $product->slug])
+            : route('products.detail',    ['lang' => $lang, 'categorySlug' => $category->slug, 'productSlug' => $product->slug]);
+
+        if ($redirect = $this->redirectIfNotCanonical($canonical)) {
+            return $redirect;
+        }
 
         $related = Product::where('product_category_id', $category->id)
             ->where('id', '!=', $product->id)
