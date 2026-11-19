@@ -9,14 +9,15 @@
   $metaD    = $post->getTranslation('meta_description', $lang, false)
            ?: ($post->getTranslation('excerpt', $lang, false) ? Str::limit(strip_tags($post->getTranslation('excerpt', $lang, false)), 160) : '');
   $pageUrl  = request()->url();
+  $pageTitle = (str_contains($metaT, 'Fab Sourcing') || mb_strlen($metaT . ' — Fab Sourcing') > 60) ? $metaT : $metaT . ' — Fab Sourcing';
 @endphp
 
-@section('title', $metaT . ' — Fab Sourcing')
+@section('title', $pageTitle)
 @section('description', $metaD)
 
 @push('seo')
 <x-seo
-  :title="$metaT . ' — Fab Sourcing'"
+  :title="$pageTitle"
   :description="$metaD"
   :canonical="$pageUrl"
   :lang="$lang"
@@ -28,55 +29,19 @@
 @endpush
 
 @push('head')
-<script type="application/ld+json">
-{
-  "@@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{{ addslashes($title) }}",
-  "datePublished": "{{ $post->published_at?->toIso8601String() }}",
-  "dateModified": "{{ $post->updated_at->toIso8601String() }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ $post->author_name }}"
-  },
-  @if($post->featured_image_url)"image": "{{ $post->featured_image_url }}",@endif
-  "url": "{{ $pageUrl }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Fab Sourcing",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ asset('images/logo-fab-full.png') }}"
-    }
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "{{ $lang === 'fr' ? 'Accueil' : 'Home' }}",
-      "item": "{{ route('home', $lang) }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "{{ route('blog', $lang) }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "{{ addslashes(Str::limit($title, 60)) }}",
-      "item": "{{ $pageUrl }}"
-    }
-  ]
-}
-</script>
+<x-jsonld :data="array_filter([
+  '@type'            => 'Article',
+  'headline'         => $title,
+  'description'      => $metaD,
+  'inLanguage'       => $lang,
+  'datePublished'    => $post->published_at?->toIso8601String(),
+  'dateModified'     => $post->updated_at->toIso8601String(),
+  'author'           => ['@type' => 'Person', 'name' => $post->author_name, 'jobTitle' => $lang === 'fr' ? 'Responsable commercial & marketing' : 'Sales & Marketing Manager', 'url' => route('about', $lang)],
+  'image'            => $post->featured_image_url ?: asset('images/og-default.jpg'),
+  'mainEntityOfPage' => $pageUrl,
+  'publisher'        => ['@type' => 'Organization', 'name' => 'Fab Sourcing', 'logo' => ['@type' => 'ImageObject', 'url' => asset('images/logo-fab-full.png')]],
+])" />
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], ['Blog', route('blog', $lang)], [$title, null]]" />
 @endpush
 
 @section('content')
@@ -154,7 +119,7 @@
             $relTags    = $rel->getTranslation('tags',     $lang, false) ?: $rel->getTranslation('tags',     'fr', false);
           @endphp
           <article class="blog-card">
-            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $rel->slug]) }}" class="blog-card-img-link">
+            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $rel->getSlugForLang($lang)]) }}" class="blog-card-img-link">
               <div class="blog-card-img">
                 @if($rel->featured_image_url)
                   <img src="{{ $rel->featured_image_url }}" alt="{{ $relTitle }}" loading="lazy">
@@ -172,7 +137,7 @@
                 </div>
               @endif
               <h3 class="blog-card-title">
-                <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $rel->slug]) }}">{{ $relTitle }}</a>
+                <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $rel->getSlugForLang($lang)]) }}">{{ $relTitle }}</a>
               </h3>
               @if($relExcerpt)
                 <p class="blog-card-excerpt">{{ Str::limit(strip_tags($relExcerpt), 100) }}</p>

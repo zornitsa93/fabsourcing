@@ -28,27 +28,6 @@
 />
 @endpush
 
-@push('scripts')
-<script type="application/ld+json">
-{
-  "@@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Fab Sourcing",
-  "url": "{{ url('/') }}",
-  "logo": "{{ asset('images/logo-fab-full.png') }}",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "FR"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "contact@fab-sourcing.fr"
-  }
-}
-</script>
-@endpush
-
 @section('content')
 
 {{-- ═══════════════════════════════════════════════════
@@ -123,7 +102,7 @@
         <span class="stat-label">{{ $lang === 'fr' ? 'Cadre réglementaire' : 'Regulatory framework' }}</span>
       </div>
       <div class="stat">
-        <div class="stat-value">Francophone</div>
+        <div class="stat-value">{{ $lang === 'fr' ? 'Francophone' : 'EN / FR' }}</div>
         <span class="stat-label">{{ $lang === 'fr' ? 'Interlocuteur unique' : 'Single point of contact' }}</span>
       </div>
     </div>
@@ -135,13 +114,13 @@
 ══════════════════════════════════════════════════════ --}}
 @php
 $bulgariaAssets = $lang === 'fr' ? [
-  ['label' => 'Compétences techniques éprouvées', 'sub' => "Tradition industrielle héritée de l'ère soviétique, formations techniques solides, maîtrise des procédés de découpe, soudure et usinage"],
-  ['label' => 'Proximité géographique',           'sub' => "3–7 jours de transport routier vers la France, pas de décalage horaire majeur, facilité d'audit sur site"],
+  ['label' => 'Compétences techniques éprouvées', 'sub' => "Longue tradition industrielle, formations techniques solides, maîtrise des procédés de découpe, soudure et usinage"],
+  ['label' => 'Proximité géographique',           'sub' => "3 à 4 jours en camion complet vers la France (7 à 10 jours en groupage), une heure d'avance seulement sur l'heure d'Europe centrale, facilité d'audit sur site"],
   ['label' => 'Cadre réglementaire UE',           'sub' => "Normes CE, directives européennes, protection de la propriété intellectuelle dans le cadre juridique communautaire"],
   ['label' => 'Flexibilité de production',         'sub' => "Capacité d'absorber les pics d'activité, volumes variables et séries limitées sans investissement industriel de votre part"],
 ] : [
-  ['label' => 'Proven technical skills', 'sub' => 'Industrial tradition inherited from the Soviet era, solid technical training, mastery of cutting, welding and machining processes'],
-  ['label' => 'Geographic proximity',    'sub' => '3–7 days of road transport to France, no major time difference, easy on-site auditing'],
+  ['label' => 'Proven technical skills', 'sub' => 'A long industrial tradition, strong technical training, and expertise in cutting, welding and machining'],
+  ['label' => 'Geographic proximity',    'sub' => '3–4 days by full truckload to France (7–10 days groupage), only one hour ahead of Central European Time, easy on-site audits'],
   ['label' => 'EU regulatory framework', 'sub' => 'CE standards, European directives, intellectual property protection within the EU legal framework'],
   ['label' => 'Production flexibility',   'sub' => 'Ability to absorb activity peaks, variable volumes and limited series with no industrial investment on your part'],
 ];
@@ -319,7 +298,7 @@ $teaserPoints = $lang === 'fr' ? [
 ] : [
   ['label' => 'Lower costs',            'sub' => 'Competitive production'],
   ['label' => 'Skilled workforce',      'sub' => 'Engineers and technicians'],
-  ['label' => 'Strong industrial base', 'sub' => 'Modern and flexible capacity'],
+  ['label' => 'Solid industrial base',  'sub' => 'Modern, flexible capacity'],
   ['label' => 'Cultural proximity',     'sub' => 'Minimal time difference'],
 ];
 @endphp

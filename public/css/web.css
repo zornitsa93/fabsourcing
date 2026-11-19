@@ -2179,7 +2179,7 @@
   margin-top: 3px;
 }
 
-.footer-col h5 {
+.footer-col h5, .footer-col .footer-heading {
   font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -2500,6 +2500,37 @@
 }
 .article-body a:hover {
   text-decoration: none;
+}
+.article-body a.btn {
+  text-decoration: none;
+}
+.article-body a.btn-primary {
+  color: #fff;
+}
+.article-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+}
+.article-body th, .article-body td {
+  padding: 10px 14px;
+  border: 1px solid rgba(15, 30, 61, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+.article-body th {
+  background: #f4f6f9;
+  color: #0f1e3d;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.article-body tbody tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015);
 }
 
 .article-share {

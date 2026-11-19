@@ -2,7 +2,7 @@
 
 @section('title', $lang === 'fr'
     ? 'Méthode Fab Sourcing — Sous-traitance industrielle'
-    : 'Fab Sourcing Method — Industrial Subcontracting')
+    : 'Our 8-step method – Fab Sourcing')
 
 @section('description', $lang === 'fr'
     ? 'Notre processus en 8 étapes : analyse du besoin, étude technique, sélection fournisseur, prototype, production, rapport d\'avancement, contrôle qualité, livraison.'
@@ -12,10 +12,10 @@
 <x-seo
   :title="$lang === 'fr'
     ? 'Notre Méthodologie — Fab Sourcing'
-    : 'Our Methodology — Fab Sourcing'"
+    : 'Our 8-step method – Fab Sourcing'"
   :description="$lang === 'fr'
     ? 'Découvrez notre processus en 8 étapes pour une externalisation industrielle réussie en Bulgarie. De l\'analyse au suivi qualité.'
-    : 'Discover our 8-step process for successful industrial outsourcing in Bulgaria. From analysis to quality monitoring.'"
+    : 'Our 8-step process: needs analysis, technical study, supplier selection, prototype, production, progress report, quality control, delivery.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -23,6 +23,10 @@
   og-type="website"
   :og-image="asset('images/og-default.jpg')"
 />
+@endpush
+
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'Méthode' : 'Our method', null]]" />
 @endpush
 
 @section('content')
@@ -35,13 +39,13 @@
         <div class="breadcrumb">
           <a href="{{ route('home', $lang) }}">{{ $lang === 'fr' ? 'Accueil' : 'Home' }}</a>
           <span>/</span>
-          <span>{{ $lang === 'fr' ? 'Méthode' : 'Method' }}</span>
+          <span>{{ $lang === 'fr' ? 'Méthode' : 'Our method' }}</span>
         </div>
         <h1 class="h-1">
           @if($lang === 'fr')
             Notre <em>méthode</em> en 8 étapes
           @else
-            Our <em>method</em> in 8 steps
+            Our <em>8-step</em> method
           @endif
         </h1>
       </div>
@@ -49,7 +53,7 @@
         <p class="lede">
           {{ $lang === 'fr'
             ? "Un accompagnement structuré. De l'analyse de vos plans à la livraison sur votre site, chaque étape est maîtrisée et documentée. Un seul interlocuteur, zéro mauvaise surprise."
-            : 'A structured process. From the analysis of your drawings to delivery on your site, every step is controlled and documented. One point of contact, zero bad surprises.' }}
+            : 'A structured process. From the analysis of your drawings to delivery on your site, every step is controlled and documented. One point of contact, no bad surprises.' }}
         </p>
       </div>
     </div>
@@ -145,8 +149,8 @@
       ],
       [
         'num'   => '02',
-        'title' => 'Single French-speaking contact',
-        'desc'  => 'A single contact in French to manage the technical, quality and logistics aspects of your project, from start to finish.',
+        'title' => 'A single point of contact',
+        'desc'  => 'One person, speaking English and French, handles the technical, quality and logistics aspects of your project, from start to finish.',
       ],
       [
         'num'   => '03',

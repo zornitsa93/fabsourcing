@@ -15,14 +15,14 @@
 
       {{-- Sitemap --}}
       <div class="footer-col">
-        <h5>{{ $lang === 'fr' ? 'Plan du site' : 'Sitemap' }}</h5>
+        <p class="footer-heading">{{ $lang === 'fr' ? 'Plan du site' : 'Site map' }}</p>
         <ul>
           <li><a href="{{ route('home',     $lang) }}">{{ $lang === 'fr' ? 'Accueil'        : 'Home' }}</a></li>
           <li><a href="{{ route('services', $lang) }}">{{ $lang === 'fr' ? 'Services'       : 'Services' }}</a></li>
           <li><a href="{{ route('products', $lang) }}">{{ $lang === 'fr' ? 'Produits'       : 'Products' }}</a></li>
           <li><a href="{{ route('why',      $lang) }}">{{ $lang === 'fr' ? 'Pourquoi la Bulgarie' : 'Why Bulgaria' }}</a></li>
-          <li><a href="{{ route('method',   $lang) }}">{{ $lang === 'fr' ? 'Méthode'        : 'Method' }}</a></li>
-          <li><a href="{{ route('about',    $lang) }}">{{ $lang === 'fr' ? 'À propos'       : 'About' }}</a></li>
+          <li><a href="{{ route('method',   $lang) }}">{{ $lang === 'fr' ? 'Méthode'        : 'Our method' }}</a></li>
+          <li><a href="{{ route('about',    $lang) }}">{{ $lang === 'fr' ? 'À propos'       : 'About us' }}</a></li>
           <li><a href="{{ route('blog',     $lang) }}">Blog</a></li>
           <li><a href="{{ route('faq',      $lang) }}">FAQ</a></li>
           @if(config('documents.enabled'))
@@ -38,7 +38,7 @@
 
       {{-- Contact --}}
       <div class="footer-col">
-        <h5>Contact</h5>
+        <p class="footer-heading">Contact</p>
         <div class="footer-person">
           <img class="footer-person-avatar"
                src="{{ asset('images/thierry.jpeg') }}"
@@ -57,7 +57,7 @@
 
       {{-- Office --}}
       <div class="footer-col">
-        <h5>{{ $lang === 'fr' ? 'Bureau' : 'Office' }}</h5>
+        <p class="footer-heading">{{ $lang === 'fr' ? 'Bureau' : 'Office' }}</p>
         <ul>
           <li><span>1, route Neuve</span></li>
           <li><span>24150 St-Capraise-de-Lalinde</span></li>

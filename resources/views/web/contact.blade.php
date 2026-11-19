@@ -2,18 +2,18 @@
 
 @section('title', $lang === 'fr'
     ? 'Contact — Fab Sourcing'
-    : 'Contact — Fab Sourcing')
+    : 'Contact – Fab Sourcing')
 
 @section('description', $lang === 'fr'
     ? 'Demandez un devis gratuit ou posez vos questions à Thierry Sudol, fondateur de Fab Sourcing. Réponse sous 48 heures.'
-    : 'Request a free quote or ask your questions to Thierry Sudol, founder of Fab Sourcing. Reply within 48 hours.')
+    : 'Request a free quote or ask Thierry Sudol your questions. Send your drawings – reply within 48 hours with a technical analysis and a first estimate.')
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'Contact — Fab Sourcing' : 'Contact — Fab Sourcing'"
+  :title="$lang === 'fr' ? 'Contact — Fab Sourcing' : 'Contact – Fab Sourcing'"
   :description="$lang === 'fr'
     ? 'Contactez Fab Sourcing pour externaliser votre production métallurgique en Bulgarie. Réponse personnelle sous 48h.'
-    : 'Contact Fab Sourcing to outsource your metalwork production to Bulgaria. Personal reply within 48 hours.'"
+    : 'Request a free quote or ask Thierry Sudol your questions. Send your drawings – reply within 48 hours with a technical analysis and a first estimate.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -23,26 +23,8 @@
 />
 @endpush
 
-@push('scripts')
-<script type="application/ld+json">
-{
-  "@@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Fab Sourcing",
-  "url": "{{ url('/') }}",
-  "logo": "{{ asset('images/logo-fab-full.png') }}",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "FR"
-  },
-  "areaServed": ["BG"],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "contact@fab-sourcing.fr"
-  }
-}
-</script>
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'Contact' : 'Contact', null]]" />
 @endpush
 
 @section('content')
@@ -69,7 +51,7 @@
         <p class="lede">
           {{ $lang === 'fr'
             ? 'Envoyez-nous vos plans ou décrivez votre besoin. Thierry Sudol vous répond personnellement sous 48 heures avec une analyse technique et une première estimation.'
-            : 'Send us your drawings or describe your need. Thierry Sudol personally replies within 48 hours with a technical analysis and first estimate.' }}
+            : 'Send us your drawings or describe your needs. Thierry Sudol will reply personally within 48 hours with a technical analysis and a first estimate.' }}
         </p>
       </div>
     </div>

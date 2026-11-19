@@ -12,6 +12,9 @@
 @section('description', $metaDesc)
 
 @push('seo')
+@if(!empty($tag) || !empty($search))
+<meta name="robots" content="noindex, follow">
+@endif
 <x-seo
   :title="$metaTitle"
   :description="$metaDesc"
@@ -22,6 +25,10 @@
   og-type="website"
   :og-image="asset('images/og-default.jpg')"
 />
+@endpush
+
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'Blog' : 'Blog', null]]" />
 @endpush
 
 @section('content')
@@ -38,9 +45,9 @@
         </div>
         <h1 class="h-1">
           @if($lang === 'fr')
-            Actualités & <em>Expertise</em>
+            Blog : sous-traitance <em>métallique</em><br>et achats industriels
           @else
-            News & <em>Expertise</em>
+            Blog: metal subcontracting<br>and <em>industrial purchasing</em>
           @endif
         </h1>
       </div>
@@ -48,7 +55,7 @@
         <p class="lede">
           {{ $lang === 'fr'
             ? 'Décryptages, conseils et tendances sur l\'externalisation industrielle en Europe de l\'Est.'
-            : 'Insights, advice and trends on industrial outsourcing in Eastern Europe.' }}
+            : 'Analysis, advice and trends on industrial outsourcing in Eastern Europe.' }}
         </p>
       </div>
     </div>
@@ -82,7 +89,7 @@
         @endphp
         <article class="blog-list-item reveal">
           @if($post->featured_image_url)
-            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->slug]) }}" class="blog-list-img">
+            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->getSlugForLang($lang)]) }}" class="blog-list-img">
               <img src="{{ $post->featured_image_url }}" alt="{{ $title }}" loading="lazy">
             </a>
           @else
@@ -99,7 +106,7 @@
               </div>
             @endif
             <h2 class="blog-list-title">
-              <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->slug]) }}">{{ $title }}</a>
+              <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->getSlugForLang($lang)]) }}">{{ $title }}</a>
             </h2>
             @if($excerpt)
               <p class="blog-list-excerpt">{{ Str::limit(strip_tags($excerpt), 160) }}</p>
@@ -113,7 +120,7 @@
                 <span>{{ $post->reading_time_minutes }} min</span>
               @endif
             </div>
-            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->slug]) }}"
+            <a href="{{ route('blog.show', ['lang' => $lang, 'slug' => $post->getSlugForLang($lang)]) }}"
                class="btn btn-accent" style="margin-top:16px">
               {{ $lang === 'fr' ? 'Lire l\'article' : 'Read article' }}
               <span class="arrow">→</span>

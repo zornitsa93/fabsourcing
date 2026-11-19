@@ -10,6 +10,28 @@
 
   @stack('seo')
 
+  {{-- Business structured data (every page) --}}
+  <x-jsonld :data="[
+    '@type'       => 'ProfessionalService',
+    'name'        => 'Fab Sourcing',
+    'url'         => url('/'),
+    'logo'        => asset('images/logo-fab-full.png'),
+    'image'       => asset('images/og-default.jpg'),
+    'description' => app()->getLocale() === 'en'
+        ? 'Metal fabrication outsourcing in Bulgaria for European companies.'
+        : 'Sous-traitance de fabrication métallique en Bulgarie pour les entreprises françaises.',
+    'telephone'   => '+33784057375',
+    'email'       => 'thierry.sudol@fab-sourcing.fr',
+    'address'     => [
+        '@type'           => 'PostalAddress',
+        'streetAddress'   => '1, route Neuve',
+        'postalCode'      => '24150',
+        'addressLocality' => 'Saint-Capraise-de-Lalinde',
+        'addressCountry'  => 'FR',
+    ],
+    'founder'     => ['@type' => 'Person', 'name' => 'Thierry Sudol'],
+  ]" />
+
   {{-- Preconnect for Google Fonts (performance) --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

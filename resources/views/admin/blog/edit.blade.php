@@ -28,6 +28,11 @@
           @error('slug')<div class="a-field-error">{{ $message }}</div>@enderror
         </div>
         <div class="a-field">
+          <label>Slug (EN)</label>
+          <input type="text" name="slug_en" value="{{ old('slug_en', $post->slug_en) }}" placeholder="по избор, за английския URL" />
+          @error('slug_en')<div class="a-field-error">{{ $message }}</div>@enderror
+        </div>
+        <div class="a-field">
           <label>Автор</label>
           <input type="text" name="author_name" value="{{ old('author_name', $post->author_name) }}" />
         </div>

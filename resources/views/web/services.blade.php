@@ -1,19 +1,19 @@
 @extends('layouts.web')
 
 @section('title', $lang === 'fr'
-    ? 'Services de sous-traitance industrielle — Fab Sourcing'
-    : 'Industrial Subcontracting Services — Fab Sourcing')
+    ? 'Sous-traitance industrielle en Bulgarie : nos services'
+    : 'Industrial subcontracting in Bulgaria: our services')
 
 @section('description', $lang === 'fr'
-    ? "Sourcing industriel, sous-traitance, industrialisation, gestion logistique et contrôle qualité — Fab Sourcing coordonne votre production en Bulgarie."
-    : 'Industrial sourcing, subcontracting, industrialization, logistics management and quality control — Fab Sourcing coordinates your production in Bulgaria.')
+    ? "Sourcing d'usines, fabrication, ingénierie Eurocodes, contrôle qualité et transport jusqu'à votre site. Un seul interlocuteur francophone."
+    : 'Supplier sourcing, fabrication, Eurocode engineering, quality control and transport to your site. One point of contact from quote to delivery.')
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'Services de sous-traitance industrielle — Fab Sourcing' : 'Industrial Subcontracting Services — Fab Sourcing'"
+  :title="$lang === 'fr' ? 'Sous-traitance industrielle en Bulgarie : nos services' : 'Industrial subcontracting in Bulgaria: our services'"
   :description="$lang === 'fr'
-    ? 'Sourcing industriel, sous-traitance, industrialisation, gestion logistique et contrôle qualité — Fab Sourcing coordonne votre production en Bulgarie.'
-    : 'Industrial sourcing, subcontracting, industrialization, logistics management and quality control — Fab Sourcing coordinates your production in Bulgaria.'"
+    ? "Sourcing d'usines, fabrication, ingénierie Eurocodes, contrôle qualité et transport jusqu'à votre site. Un seul interlocuteur francophone."
+    : 'Supplier sourcing, fabrication, Eurocode engineering, quality control and transport to your site. One point of contact from quote to delivery.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -28,6 +28,10 @@
   /* Service cards are clickable (→ contact); keep card text styling, no link underline */
   a.service { color: inherit; text-decoration: none; cursor: pointer; }
 </style>
+@endpush
+
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'Services' : 'Services', null]]" />
 @endpush
 
 @section('content')
@@ -45,16 +49,16 @@
           </div>
           <h1 class="h-1">
             @if($lang === 'fr')
-              Nos services de<br><em>sous-traitance</em>
+              Sourcing, fabrication et<br><em>suivi qualité</em> en Bulgarie
             @else
-              Our <em>services</em>
+              Our <em>subcontracting</em> services
             @endif
           </h1>
           <p class="lede" style="margin-top:24px">
             {{ $page->getTranslation('hero_lede', $lang, false)
               ?: ($lang === 'fr'
                 ? "De la pièce unitaire à la grande série, Fab Sourcing coordonne l'ensemble de la chaîne de fabrication depuis un réseau d'usines partenaires en Bulgarie."
-                : 'From unit production to large series, Fab Sourcing coordinates the entire manufacturing chain through a network of partner workshops in Bulgaria.') }}
+                : 'From one-off parts to large series, Fab Sourcing coordinates the entire manufacturing chain through a network of partner workshops in Bulgaria.') }}
           </p>
         </div>
         <div>
@@ -76,16 +80,16 @@
         </div>
         <h1 class="h-1">
           @if($lang === 'fr')
-            Nos services de<br><em>sous-traitance</em>
+            Sourcing, fabrication et<br><em>suivi qualité</em> en Bulgarie
           @else
-            Our <em>services</em>
+            Our <em>subcontracting</em> services
           @endif
         </h1>
         <p class="lede" style="margin-top:24px">
           {{ $page?->getTranslation('hero_lede', $lang, false)
             ?: ($lang === 'fr'
               ? "De la pièce unitaire à la grande série, Fab Sourcing coordonne l'ensemble de la chaîne de fabrication depuis un réseau d'usines partenaires en Bulgarie."
-              : 'From unit production to large series, Fab Sourcing coordinates the entire manufacturing chain through a network of partner workshops in Bulgaria.') }}
+              : 'From one-off parts to large series, Fab Sourcing coordinates the entire manufacturing chain through a network of partner workshops in Bulgaria.') }}
         </p>
       </div>
     @endif
@@ -129,6 +133,21 @@
           '<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />',
       ];
       @endphp
+
+      @push('head')
+      <x-jsonld :data="[
+        '@type' => 'ItemList',
+        'itemListElement' => $services->values()->map(fn ($sv, $i) => [
+            '@type' => 'ListItem', 'position' => $i + 1,
+            'item'  => [
+                '@type'       => 'Service',
+                'name'        => $sv->getTranslation('title', $lang, false) ?: $sv->getTranslation('title', 'fr', false),
+                'description' => $sv->getTranslation('description', $lang, false) ?: $sv->getTranslation('description', 'fr', false),
+                'provider'    => ['@type' => 'ProfessionalService', 'name' => 'Fab Sourcing', 'url' => url('/')],
+            ],
+        ])->all(),
+      ]" />
+      @endpush
 
       <div class="services-grid reveal">
         @foreach($services as $service)
@@ -176,7 +195,7 @@
         [
           'num'   => '02',
           'title' => 'Respect des délais',
-          'desc'  => 'Transport optimisé vers la France en 3 à 4 jours par route et suivi rigoureux du planning de production.',
+          'desc'  => 'Transport routier optimisé : 3 à 4 jours en camion complet vers la France, 7 à 10 jours en groupage, et suivi rigoureux du planning de production.',
           'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />',
         ],
         [
@@ -195,13 +214,13 @@
         [
           'num'   => '02',
           'title' => 'On-time delivery',
-          'desc'  => 'Optimised transport to France in 3 to 4 days by road, with rigorous production schedule monitoring.',
+          'desc'  => 'Optimised road transport – 3–4 days by full truckload to France, 7–10 days groupage – and strict monitoring of the production schedule.',
           'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />',
         ],
         [
           'num'   => '03',
-          'title' => 'Single French-speaking contact',
-          'desc'  => 'One single point of contact in French to manage the technical, quality and logistics aspects of your project.',
+          'title' => 'A single point of contact',
+          'desc'  => 'One person, speaking English and French, handles the technical, quality and logistics aspects of your project.',
           'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />',
         ],
       ];
@@ -233,7 +252,7 @@
         <p class="lede" style="margin-top:20px">
           {{ $lang === 'fr'
             ? 'Envoyez-nous vos plans, nous revenons avec une analyse technique et un prix sous 48 heures.'
-            : 'Send us your drawings, we get back with a technical analysis and price within 48 hours.' }}
+            : 'Send us your drawings – we will come back to you with a technical analysis and a price within 48 hours.' }}
         </p>
       </div>
       <div>

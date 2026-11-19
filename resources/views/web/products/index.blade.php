@@ -1,19 +1,19 @@
 @extends('layouts.web')
 
 @section('title', $lang === 'fr'
-    ? 'Catalogue produits — Fab Sourcing'
-    : 'Product catalogue — Fab Sourcing')
+    ? 'Fabrication métallique sur mesure en Bulgarie'
+    : 'Custom metal fabrication in Bulgaria – Fab Sourcing')
 
 @section('description', $lang === 'fr'
-    ? 'Structures métalliques, escaliers, garde-corps, bardages et plus encore. Fabrication sur mesure aux normes européennes en Bulgarie.'
-    : 'Steel structures, stairs, railings, cladding and more. Custom fabrication to European standards in Bulgaria.')
+    ? 'Escaliers, garde-corps, structures, cuves, racks, skids, portails : fabrication sur plan en Bulgarie, galvanisée ou peinte, livrée en France.'
+    : 'Stairs, railings, steel structures, tanks, racks, skids, gates: made to your drawings in Bulgaria, galvanised or painted, delivered across Europe.')
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'Notre Catalogue — Fab Sourcing' : 'Our Catalogue — Fab Sourcing'"
+  :title="$lang === 'fr' ? 'Fabrication métallique sur mesure en Bulgarie' : 'Custom metal fabrication in Bulgaria – Fab Sourcing'"
   :description="$lang === 'fr'
-    ? 'Catalogue de produits métalliques fabriqués en Bulgarie : structures, escaliers, garde-corps, menuiseries, bardages et plus.'
-    : 'Catalogue of metalwork products manufactured in Bulgaria: structures, stairs, railings, joinery, cladding and more.'"
+    ? 'Escaliers, garde-corps, structures, cuves, racks, skids, portails : fabrication sur plan en Bulgarie, galvanisée ou peinte, livrée en France.'
+    : 'Stairs, railings, steel structures, tanks, racks, skids, gates: made to your drawings in Bulgaria, galvanised or painted, delivered across Europe.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -21,6 +21,10 @@
   og-type="website"
   :og-image="asset('images/og-default.jpg')"
 />
+@endpush
+
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'Produits' : 'Products', null]]" />
 @endpush
 
 @section('content')
@@ -36,7 +40,7 @@
       </div>
       <h1 class="h-1">
         @if($lang === 'fr')
-          Fabrication métallique<br><em>sur mesure</em>
+          Nos fabrications<br><em>métalliques sur mesure</em>
         @else
           Custom metal<br><em>fabrication</em>
         @endif
@@ -44,7 +48,7 @@
       <p class="lede" style="margin-top:24px">
         {{ $lang === 'fr'
           ? 'Familles de produits métalliques fabriqués sur mesure en Bulgarie, selon vos plans et les normes européennes en vigueur.'
-          : 'Families of custom metal products manufactured in Bulgaria, according to your specifications and applicable European standards.' }}
+          : 'Families of metal products made to measure in Bulgaria, to your drawings and to current European standards.' }}
       </p>
     </div>
   </div>
@@ -78,13 +82,13 @@
           @if($lang === 'fr')
             Vous ne trouvez pas ce que vous cherchez ?
           @else
-            Can't find what you're looking for?
+            Can't find what you are looking for?
           @endif
         </h2>
         <p class="lede" style="margin-top:20px">
           {{ $lang === 'fr'
             ? 'Envoyez-nous vos plans. Nous fabriquons sur mesure selon toute spécification technique.'
-            : 'Send us your drawings. We fabricate to any technical specification.' }}
+            : 'Send us your drawings. We manufacture to measure, to any technical specification.' }}
         </p>
       </div>
       <div>

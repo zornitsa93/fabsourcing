@@ -2,15 +2,15 @@
 
 @section('title', $lang === 'fr'
     ? 'FAQ externalisation industrielle — Fab Sourcing'
-    : 'Industrial outsourcing FAQ — Fab Sourcing')
+    : 'FAQ – Industrial outsourcing to Bulgaria – Fab Sourcing')
 
 @section('description', $lang === 'fr'
     ? "Toutes les réponses sur l'externalisation industrielle en Bulgarie : qualité, coûts, délais, logistique, marquage CE et accompagnement Fab Sourcing."
-    : 'All the answers on industrial outsourcing to Bulgaria: quality, costs, lead times, logistics, CE marking and Fab Sourcing support.')
+    : 'All the answers on outsourcing metal fabrication to Bulgaria: quality, costs, lead times, logistics, CE marking and how Fab Sourcing supports you.')
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'Questions fréquentes — Fab Sourcing' : 'Frequently asked questions — Fab Sourcing'"
+  :title="$lang === 'fr' ? 'Questions fréquentes — Fab Sourcing' : 'FAQ – Industrial outsourcing to Bulgaria – Fab Sourcing'"
   :description="$lang === 'fr'
     ? 'Externalisation industrielle en Europe de l\'Est : généralités, technique, finances, logistique, relation et stratégie. Toutes vos questions, nos réponses.'
     : 'Industrial outsourcing in Eastern Europe: basics, technical, financial, logistics, relationship and strategy. All your questions answered.'"
@@ -43,6 +43,10 @@
 </style>
 @endpush
 
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'FAQ' : 'FAQ', null]]" />
+@endpush
+
 @section('content')
 
 {{-- Page hero --}}
@@ -67,7 +71,7 @@
         <p class="lede">
           {{ $lang === 'fr'
             ? "Tout ce que vous devez savoir avant d'externaliser votre production métallique en Bulgarie."
-            : 'Everything you need to know before outsourcing your metalwork production to Bulgaria.' }}
+            : 'Everything you need to know before outsourcing your metal production to Bulgaria.' }}
         </p>
       </div>
     </div>
@@ -83,7 +87,7 @@ $categories = [
         'q' => $lang === 'fr' ? "Qu'est-ce que l'externalisation industrielle ?" : 'What is industrial outsourcing?',
         'a' => $lang === 'fr'
           ? "L'externalisation industrielle consiste à déléguer tout ou partie de votre processus de production à un prestataire spécialisé externe. Contrairement à la simple sous-traitance ponctuelle, l'outsourcing implique une relation partenariale durable, avec transfert de responsabilité sur la qualité, les délais et la conformité. Chez Fab Sourcing, nous proposons une externalisation maîtrisée vers des ateliers certifiés en Bulgarie avec un interlocuteur unique francophone."
-          : 'Industrial outsourcing means delegating all or part of your production process to a specialised external provider. Unlike simple one-off subcontracting, outsourcing involves a lasting partnership, with transfer of responsibility for quality, lead times and compliance. At Fab Sourcing, we offer controlled outsourcing to certified workshops in Bulgaria with a single French-speaking point of contact.',
+          : 'Industrial outsourcing means delegating all or part of your production process to a specialised external provider. Unlike simple one-off subcontracting, outsourcing involves a lasting partnership, with transfer of responsibility for quality, lead times and compliance. At Fab Sourcing, we offer controlled outsourcing to certified workshops in Bulgaria with a single point of contact.',
       ],
       [
         'q' => $lang === 'fr' ? "Quelle différence entre sous-traitance et outsourcing ?" : 'What is the difference between subcontracting and outsourcing?',
@@ -95,7 +99,7 @@ $categories = [
         'q' => $lang === 'fr' ? "Pourquoi externaliser plutôt que produire en interne ?" : 'Why outsource rather than produce in-house?',
         'a' => $lang === 'fr'
           ? "Trois raisons structurelles : (1) Accès à des compétences rares — soudeurs certifiés, opérateurs CNC qualifiés sont de plus en plus difficiles à recruter en France ; (2) Flexibilité financière — transformation de coûts fixes (investissements, salaires) en coûts variables adaptés à votre activité ; (3) Concentration stratégique — vos équipes se consacrent à l'innovation et au commercial pendant que nous gérons la fabrication."
-          : 'Three structural reasons: (1) Access to scarce skills — certified welders and qualified CNC operators are increasingly hard to recruit in France; (2) Financial flexibility — turning fixed costs (investment, salaries) into variable costs matched to your activity; (3) Strategic focus — your teams concentrate on innovation and sales while we handle manufacturing.',
+          : 'Three structural reasons: (1) Access to scarce skills — certified welders and qualified CNC operators are increasingly hard to recruit in Western Europe; (2) Financial flexibility — turning fixed costs (investment, salaries) into variable costs matched to your activity; (3) Strategic focus — your teams concentrate on innovation and sales while we handle manufacturing.',
       ],
     ],
   ],
@@ -167,10 +171,10 @@ $categories = [
     'title' => $lang === 'fr' ? "Questions logistiques" : 'Logistics questions',
     'items' => [
       [
-        'q' => $lang === 'fr' ? "Quel est le délai de livraison vers la France ?" : 'What is the delivery time to France?',
+        'q' => $lang === 'fr' ? "Quel est le délai de livraison vers la France ?" : 'What is the delivery time?',
         'a' => $lang === 'fr'
-          ? "3 à 7 jours en transport routier direct depuis la Bulgarie. Pour les volumes importants, nous pouvons organiser du groupage ou des livraisons programmées hebdomadaires. Pas de délai maritime, pas de risque de blocage portuaire."
-          : '3 to 7 days by direct road transport from Bulgaria. For large volumes, we can arrange groupage or scheduled weekly deliveries. No sea-freight time, no risk of port blockage.',
+          ? "3 à 4 jours en camion complet vers la France, 7 à 10 jours en groupage, en transport routier direct depuis la Bulgarie. Pour les volumes importants, nous pouvons organiser des livraisons programmées hebdomadaires. Pas de délai maritime, pas de risque de blocage portuaire."
+          : '3–4 days by full truckload to France, 7–10 days groupage, by direct road transport from Bulgaria. For large volumes, we can organise scheduled weekly deliveries. No sea freight delays, no risk of port congestion.',
       ],
       [
         'q' => $lang === 'fr' ? "Livrez-vous sur site ou en entrepôt ?" : 'Do you deliver on site or to a warehouse?',
@@ -182,13 +186,13 @@ $categories = [
         'q' => $lang === 'fr' ? "Gérez-vous les formalités douanières ?" : 'Do you handle customs formalities?',
         'a' => $lang === 'fr'
           ? "Aucune formalité douanière nécessaire entre la Bulgarie et la France : les deux pays sont membres de l'Union Européenne. La marchandise circule librement avec document de transport CMR. Pas de dédouanement, pas de droits d'importation."
-          : 'No customs formalities are needed between Bulgaria and France: both countries are members of the European Union. Goods move freely with a CMR transport document. No customs clearance, no import duties.',
+          : 'No customs formalities are needed between Bulgaria and other EU member states: goods move freely with a CMR transport document. No customs clearance, no import duties.',
       ],
       [
         'q' => $lang === 'fr' ? "Pouvez-vous stocker chez vous ?" : 'Can you store goods at your end?',
         'a' => $lang === 'fr'
           ? "Oui, nous proposons un service de stockage consigné en Bulgarie. Vous produisez en volume pour bénéficier des économies d'échelle, et nous livrons au fil de vos besoins. Cela réduit vos stocks en France et améliore votre trésorerie."
-          : 'Yes, we offer a consignment storage service in Bulgaria. You produce in volume to benefit from economies of scale, and we deliver as your needs arise. This reduces your stock in France and improves your cash flow.',
+          : 'Yes, we offer a consignment storage service in Bulgaria. You produce in volume to benefit from economies of scale, and we deliver as your needs arise. This reduces your own stock and improves your cash flow.',
       ],
     ],
   ],
@@ -199,7 +203,7 @@ $categories = [
         'q' => $lang === 'fr' ? "Qui est mon interlocuteur ?" : 'Who is my point of contact?',
         'a' => $lang === 'fr'
           ? "Un seul contact francophone : Thierry Sudol, basé en France. Il pilote l'ensemble de votre projet : analyse technique, sélection atelier, suivi qualité, logistique, facturation. Vous ne dialoguez pas directement avec les ateliers bulgares — nous gérons cette interface pour vous."
-          : 'A single French-speaking contact: Thierry Sudol, based in France. He manages your entire project: technical analysis, workshop selection, quality monitoring, logistics, invoicing. You do not deal directly with the Bulgarian workshops — we manage that interface for you.',
+          : 'A single point of contact, speaking English and French: Thierry Sudol, based in France. Thierry manages your entire project: technical analysis, workshop selection, quality monitoring, logistics, invoicing. You do not deal directly with the Bulgarian workshops — we manage that interface for you.',
       ],
       [
         'q' => $lang === 'fr' ? "Comment se déroule le premier contact ?" : 'How does the first contact work?',
@@ -246,6 +250,19 @@ $categories = [
   ],
 ];
 @endphp
+
+@push('head')
+@php
+  $faqEntities = [];
+  foreach ($categories as $cat) {
+      foreach ($cat['items'] as $item) {
+          $faqEntities[] = ['@type' => 'Question', 'name' => $item['q'],
+              'acceptedAnswer' => ['@type' => 'Answer', 'text' => $item['a']]];
+      }
+  }
+@endphp
+<x-jsonld :data="['@type' => 'FAQPage', 'mainEntity' => $faqEntities]" />
+@endpush
 
 {{-- FAQ groups --}}
 <section class="section">

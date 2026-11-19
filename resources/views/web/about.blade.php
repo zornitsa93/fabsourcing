@@ -2,18 +2,18 @@
 
 @section('title', $lang === 'fr'
     ? 'À propos de Fab Sourcing — Sous-traitance industrielle'
-    : 'About Fab Sourcing — Industrial Subcontracting')
+    : 'About Fab Sourcing – Industrial sourcing in Bulgaria')
 
 @section('description', $lang === 'fr'
     ? 'Fab Sourcing, expert en sourcing industriel en Bulgarie. Nous accompagnons PME, groupes internationaux et bureaux d\'études dans l\'externalisation de leur production.'
-    : 'Fab Sourcing, industrial sourcing expert in Bulgaria. We support SMEs, international groups and engineering offices in outsourcing their production.')
+    : 'Fab Sourcing, industrial sourcing specialist in Bulgaria. We help SMEs, international groups and engineering firms outsource their metal fabrication.')
 
 @push('seo')
 <x-seo
-  :title="$lang === 'fr' ? 'À propos — Fab Sourcing' : 'About — Fab Sourcing'"
+  :title="$lang === 'fr' ? 'À propos — Fab Sourcing' : 'About Fab Sourcing – Industrial sourcing in Bulgaria'"
   :description="$lang === 'fr'
     ? 'Fab Sourcing est spécialisé dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie.'
-    : 'Fab Sourcing specialises in helping French companies outsource their production to Bulgaria.'"
+    : 'Fab Sourcing, industrial sourcing specialist in Bulgaria. We help SMEs, international groups and engineering firms outsource their metal fabrication.'"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
@@ -21,6 +21,10 @@
   og-type="website"
   :og-image="asset('images/og-default.jpg')"
 />
+@endpush
+
+@push('head')
+<x-breadcrumb-ld :items="[[$lang === 'fr' ? 'Accueil' : 'Home', route('home', $lang)], [$lang === 'fr' ? 'À propos' : 'About us', null]]" />
 @endpush
 
 @section('content')
@@ -39,7 +43,7 @@
           @if($lang === 'fr')
             Expert en sourcing industriel<br><em>Europe de l'Est</em>
           @else
-            Eastern Europe<br><em>industrial sourcing expert</em>
+            Industrial sourcing experts<br><em>in Eastern Europe</em>
           @endif
         </h1>
       </div>
@@ -47,7 +51,7 @@
         <p class="lede">
           {{ $lang === 'fr'
             ? 'Nous sommes spécialisés dans l\'accompagnement des entreprises françaises souhaitant externaliser leur production en Bulgarie.'
-            : 'We specialise in helping French companies outsource their production to Bulgaria.' }}
+            : 'We specialise in supporting European companies that want to outsource their production to Bulgaria.' }}
         </p>
       </div>
     </div>
@@ -118,7 +122,7 @@
         <p class="body">
           {{ $lang === 'fr'
             ? 'Nos clients sont des industriels qui cherchent à externaliser tout ou partie de leur fabrication en Europe de l\'Est, avec un interlocuteur unique francophone.'
-            : 'Our clients are manufacturers who want to outsource all or part of their production in Eastern Europe, with a single French-speaking contact.' }}
+            : 'Our customers are manufacturers who want to outsource all or part of their fabrication to Eastern Europe, with a single point of contact.' }}
         </p>
       </div>
     </div>
@@ -196,7 +200,7 @@
         <p class="body" style="margin-bottom:32px">
           {{ $lang === 'fr'
             ? 'Thierry Sudol est votre interlocuteur unique chez Fab Sourcing. Il vous accompagne de la demande de devis jusqu\'à la livraison, en français, avec un suivi personnalisé de votre projet.'
-            : 'Thierry Sudol is your single point of contact at Fab Sourcing. He supports you from the initial quote request through to delivery, in French, with personalised follow-up of your project.' }}
+            : 'Thierry Sudol is your single point of contact at Fab Sourcing. Thierry supports you from the request for quote to delivery, in English or French, with personal follow-up of your project.' }}
         </p>
         <a href="{{ route('contact', $lang) }}" class="btn btn-primary">
           {{ $lang === 'fr' ? 'Contacter Thierry' : 'Contact Thierry' }}

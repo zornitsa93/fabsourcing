@@ -687,7 +687,7 @@
 }
 
 .footer-col {
-  h5 {
+  h5, .footer-heading {
     font-family: $font-mono;
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -936,6 +936,23 @@
   em     { font-style: italic; }
   blockquote { border-left: 3px solid $accent; padding: 16px 24px; margin: 28px 0; background: $bg-alt; border-radius: 0 $radius $radius 0; font-style: italic; color: $ink-700; }
   a { color: $accent; text-decoration: underline; &:hover { text-decoration: none; } }
+  a.btn { text-decoration: none; }
+  a.btn-primary { color: #fff; }
+
+  // Tables (scroll horizontally on narrow screens)
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-overflow-scrolling: touch;
+  }
+  th, td { padding: 10px 14px; border: 1px solid $line; text-align: left; vertical-align: top; }
+  th { background: $bg-alt; color: $ink-900; font-weight: 600; white-space: nowrap; }
+  tbody tr:nth-child(even) td { background: rgba(0, 0, 0, 0.015); }
 }
 
 .article-share {
