@@ -12,6 +12,10 @@
 @php
     $ogLocale = $lang === 'en' ? 'en_US' : 'fr_FR';
     $siteName = 'Fab Sourcing';
+    // Facebook/LinkedIn need an absolute og:image URL: turn /storage/... into https://domain/storage/...
+    if ($ogImage && ! \Illuminate\Support\Str::startsWith($ogImage, ['http://', 'https://'])) {
+        $ogImage = url($ogImage);
+    }
 @endphp
 
 <link rel="canonical" href="{{ $canonical }}">
