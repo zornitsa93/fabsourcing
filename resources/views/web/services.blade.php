@@ -12,7 +12,7 @@
 <x-seo
   :title="$lang === 'fr' ? 'Sous-traitance industrielle en Bulgarie : nos services' : 'Industrial subcontracting in Bulgaria: our services'"
   :description="$lang === 'fr'
-    ? "Sourcing d'usines, fabrication, ingénierie Eurocodes, contrôle qualité et transport jusqu'à votre site. Un seul interlocuteur francophone."
+    ? 'Sourcing d\'usines, fabrication, ingénierie Eurocodes, contrôle qualité et transport jusqu\'à votre site. Un seul interlocuteur francophone.'
     : 'Supplier sourcing, fabrication, Eurocode engineering, quality control and transport to your site. One point of contact from quote to delivery.'"
   :canonical="request()->url()"
   :lang="$lang"
