@@ -26,14 +26,21 @@ class SyncSiteContent extends Command
     {
         return [
             'home' => [
-                'meta_title'       => ['en' => 'Metal fabrication outsourcing in Bulgaria – Fab Sourcing'],
-                'meta_description' => ['en' => 'Steel structures, stairs, railings and tanks made to your drawings in EN 1090 workshops in Bulgaria. EU quality, lower costs, quote within 48 h.'],
-                'hero_heading'     => ['en' => "Bulgaria:\nyour reliable source\nfor metal fabrication"],
+                'meta_title'       => ['fr' => 'Sous-traitance métallerie en Bulgarie – Fab Sourcing', 'en' => 'Metal fabrication outsourcing in Bulgaria – Fab Sourcing'],
+                'meta_description' => [
+                    'fr' => 'Escaliers, garde-corps, structures acier fabriqués en Bulgarie par des ateliers EN 1090. Interlocuteur français, devis sous 48 h.',
+                    'en' => 'Steel structures, stairs, railings and tanks made to your drawings in EN 1090 workshops in Bulgaria. EU quality, lower costs, quote within 48 h.',
+                ],
+                'hero_heading'     => ['fr' => "Sous-traitance métallerie\net structures acier\nen Bulgarie", 'en' => "Bulgaria:\nyour reliable source\nfor metal fabrication"],
                 'hero_lede'        => ['en' => 'We help European companies cut their production costs by outsourcing metal fabrication to qualified partner workshops in Bulgaria – with one point of contact from quote to delivery.'],
             ],
+            'services' => [
+                'meta_title'       => ['fr' => 'Sous-traitance industrielle en Bulgarie : nos services'],
+                'meta_description' => ['fr' => "Sourcing d'usines, fabrication, ingénierie Eurocodes, contrôle qualité et transport jusqu'à votre site. Un seul interlocuteur francophone."],
+            ],
             'blog' => [
-                'meta_title'       => ['en' => 'Metal subcontracting blog – Fab Sourcing'],
-                'meta_description' => ['en' => "Buyer's guides: EN 1090, total cost of ownership, choosing a subcontractor, manufacturing in Bulgaria. Articles written by a metalwork professional."],
+                'meta_title'       => ['fr' => 'Blog sous-traitance métallique – Fab Sourcing', 'en' => 'Metal subcontracting blog – Fab Sourcing'],
+                'meta_description' => ['fr' => "Conseils d'acheteur : EN 1090, coût complet, choix d'un sous-traitant, fabrication en Bulgarie. Articles rédigés par un métallier.", 'en' => "Buyer's guides: EN 1090, total cost of ownership, choosing a subcontractor, manufacturing in Bulgaria. Articles written by a metalwork professional."],
             ],
             'methodology' => [
                 'meta_title'       => ['en' => 'Our 8-step method – Fab Sourcing'],
