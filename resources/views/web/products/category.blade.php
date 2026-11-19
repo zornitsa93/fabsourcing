@@ -19,7 +19,7 @@
   :hreflang-fr="$langSwitcherUrls['fr']"
   :hreflang-en="$langSwitcherUrls['en'] ?? null"
   og-type="website"
-  :og-image="asset('images/og-default.jpg')"
+  :og-image="$category->og_image_url ?? asset('images/og-default.jpg')"
 />
 @endpush
 

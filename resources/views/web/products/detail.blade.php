@@ -33,7 +33,7 @@
   :hreflang-fr="$langSwitcherUrls['fr']"
   :hreflang-en="$langSwitcherUrls['en'] ?? null"
   og-type="product"
-  :og-image="$product->main_image_url ?? asset('images/og-default.jpg')"
+  :og-image="$product->og_image_url ?? $category->og_image_url ?? asset('images/og-default.jpg')"
 />
 @endpush
 
@@ -44,7 +44,7 @@
   "@type": "Product",
   "name": "{{ addslashes($prodName) }}",
   @if($metaDesc)"description": "{{ addslashes(Str::limit(strip_tags($metaDesc), 160)) }}",@endif
-  @if($product->main_image_url)"image": "{{ $product->main_image_url }}",@endif
+  "image": "{{ url($product->og_image_url ?? $category->og_image_url ?? asset('images/og-default.jpg')) }}",
   "brand": {
     "@type": "Brand",
     "name": "Fab Sourcing"

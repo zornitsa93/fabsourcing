@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Support\OgImage;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Translatable\HasTranslations;
 
@@ -42,6 +43,12 @@ class ProductCategory extends Model
     public function getImageUrlAttribute(): ?string
     {
         return $this->image ? Storage::disk('public')->url($this->image) : null;
+    }
+
+    /** 1200x630 copy of the category image for og:image / twitter:image. */
+    public function getOgImageUrlAttribute(): ?string
+    {
+        return OgImage::url($this->image);
     }
 
     public function getThumbUrlAttribute(): ?string
@@ -97,6 +104,7 @@ class ProductCategory extends Model
                 Storage::disk('public')->delete($cat->image);
                 Storage::disk('public')->delete($dir . '/' . $base . '_thumb.jpg');
                 Storage::disk('public')->delete($dir . '/' . $base . '_medium.jpg');
+                Storage::disk('public')->delete(OgImage::pathFor($cat->image));
             }
         });
     }

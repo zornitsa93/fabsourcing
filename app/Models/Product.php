@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Support\OgImage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -37,6 +38,12 @@ class Product extends Model
     public function getMainImageUrlAttribute(): ?string
     {
         return $this->main_image ? Storage::url($this->main_image) : null;
+    }
+
+    /** 1200x630 copy of the main image for og:image / twitter:image. */
+    public function getOgImageUrlAttribute(): ?string
+    {
+        return OgImage::url($this->main_image);
     }
 
     public function getGalleryUrlsAttribute(): array

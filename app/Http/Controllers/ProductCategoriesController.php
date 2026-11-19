@@ -192,5 +192,6 @@ class ProductCategoriesController extends Controller
         Storage::disk('public')->delete($path);
         Storage::disk('public')->delete($dir . '/' . $base . '_thumb.jpg');
         Storage::disk('public')->delete($dir . '/' . $base . '_medium.jpg');
+        Storage::disk('public')->delete(\App\Support\OgImage::pathFor($path));
     }
 }
