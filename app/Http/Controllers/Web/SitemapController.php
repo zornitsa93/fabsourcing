@@ -93,8 +93,6 @@ class SitemapController extends Controller
             ['name' => 'about',          'params' => ['lang' => 'fr'], 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['name' => 'faq',            'params' => ['lang' => 'fr'], 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['name' => 'contact',        'params' => ['lang' => 'fr'], 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['name' => 'legal.mentions', 'params' => ['lang' => 'fr'], 'priority' => '0.3', 'changefreq' => 'yearly'],
-            ['name' => 'legal.privacy',  'params' => ['lang' => 'fr'], 'priority' => '0.3', 'changefreq' => 'yearly'],
         ] : [
             ['name' => 'home',              'params' => ['lang' => 'en'], 'priority' => '1.0', 'changefreq' => 'weekly'],
             ['name' => 'services',          'params' => ['lang' => 'en'], 'priority' => '0.8', 'changefreq' => 'monthly'],
@@ -105,8 +103,6 @@ class SitemapController extends Controller
             ['name' => 'about.en',          'params' => ['lang' => 'en'], 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['name' => 'faq',               'params' => ['lang' => 'en'], 'priority' => '0.7', 'changefreq' => 'monthly'],
             ['name' => 'contact',           'params' => ['lang' => 'en'], 'priority' => '0.7', 'changefreq' => 'monthly'],
-            ['name' => 'legal.mentions.en', 'params' => ['lang' => 'en'], 'priority' => '0.3', 'changefreq' => 'yearly'],
-            ['name' => 'legal.privacy.en',  'params' => ['lang' => 'en'], 'priority' => '0.3', 'changefreq' => 'yearly'],
         ];
 
         return array_map(fn ($r) => [

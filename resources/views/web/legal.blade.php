@@ -5,15 +5,18 @@
   $content   = $page->getTranslation('content',          $lang, false) ?: $page->getTranslation('content', 'fr', false);
   $metaTitle = $page->getTranslation('meta_title',       $lang, false) ?: $pageTitle;
   $metaDesc  = $page->getTranslation('meta_description', $lang, false) ?: '';
+  // The stored meta title may already end with the brand ("... | Fab Sourcing"): strip it, then add it once.
+  $fullTitle = trim(preg_replace('/\s*[|—–-]\s*Fab Sourcing\s*$/u', '', $metaTitle)) . ' — Fab Sourcing';
 @endphp
 
-@section('title', $metaTitle . ' — Fab Sourcing')
+@section('title', $fullTitle)
 @section('description', $metaDesc)
 
 @push('seo')
+<meta name="robots" content="noindex, follow">
 <x-seo
-  :title="($page?->getTranslation('meta_title', $lang, false) ?: ($lang === 'fr' ? 'Mentions légales — Fab Sourcing' : 'Legal Notice — Fab Sourcing'))"
-  :description="$lang === 'fr' ? 'Mentions légales de Fab Sourcing.' : 'Legal notice for Fab Sourcing.'"
+  :title="$fullTitle"
+  :description="$metaDesc ?: ($lang === 'fr' ? 'Mentions légales de Fab Sourcing.' : 'Legal notice for Fab Sourcing.')"
   :canonical="request()->url()"
   :lang="$lang"
   :hreflang-fr="$langSwitcherUrls['fr']"
