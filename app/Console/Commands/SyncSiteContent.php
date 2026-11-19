@@ -24,6 +24,36 @@ class SyncSiteContent extends Command
     /** pages: slug => field => lang => value */
     private function pages(): array
     {
+        return array_merge_recursive($this->basePages(), $this->legalPages());
+    }
+
+    /**
+     * Legal notice / privacy+cookies pages: final texts supplied by the client (FABTEC EOOD),
+     * stored as HTML in database/content/legal/{fr,en}/{mentions,privacy}.html.
+     */
+    private function legalPages(): array
+    {
+        $read = fn (string $lang, string $f) => file_get_contents(database_path("content/legal/$lang/$f.html"));
+        return [
+            'mentions-legales' => [
+                'content'          => ['fr' => $read('fr', 'mentions'), 'en' => $read('en', 'mentions')],
+                'meta_description' => [
+                    'fr' => 'Mentions légales du site fab-sourcing.fr : éditeur FABTEC EOOD, directrice de la publication, hébergeur.',
+                    'en' => 'Legal notice for fab-sourcing.fr: publisher FABTEC EOOD, publication director, hosting provider.',
+                ],
+            ],
+            'politique-de-confidentialite' => [
+                'content'          => ['fr' => $read('fr', 'privacy'), 'en' => $read('en', 'privacy')],
+                'meta_description' => [
+                    'fr' => 'Politique de confidentialité et politique de cookies de fab-sourcing.fr : données traitées, droits, cookies.',
+                    'en' => 'Privacy and cookie policy for fab-sourcing.fr: data processed, your rights, cookies.',
+                ],
+            ],
+        ];
+    }
+
+    private function basePages(): array
+    {
         return [
             'home' => [
                 'meta_title'       => ['fr' => 'Sous-traitance métallerie en Bulgarie – Fab Sourcing', 'en' => 'Metal fabrication outsourcing in Bulgaria – Fab Sourcing'],

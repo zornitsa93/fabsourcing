@@ -7,11 +7,11 @@
     <div style="display:flex; gap:8px; flex-shrink:0">
       <button id="cookie-accept"
         style="background:#0f1e3d; color:#fff; border:none; padding:10px 20px; border-radius:6px; font-size:14px; cursor:pointer; font-family:inherit; font-weight:500">
-        Accepter
+        <span data-fr="Accepter" data-en="Accept">Accepter</span>
       </button>
       <button id="cookie-decline"
         style="background:transparent; color:#0f1e3d; border:1px solid #0f1e3d; padding:10px 20px; border-radius:6px; font-size:14px; cursor:pointer; font-family:inherit">
-        Refuser
+        <span data-fr="Refuser" data-en="Decline">Refuser</span>
       </button>
     </div>
   </div>
@@ -31,6 +31,31 @@
   };
 
   text.textContent = messages[lang] || messages.fr;
+  Array.prototype.forEach.call(document.querySelectorAll('#cookie-banner [data-fr]'), function (el) {
+    el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+  });
+
+  // The choice is kept 6 months (as stated in the cookie policy), then asked again.
+  var SIX_MONTHS = 183 * 24 * 60 * 60 * 1000;
+  function readConsent() {
+    try {
+      var raw = localStorage.getItem('cookie_consent');
+      var at  = parseInt(localStorage.getItem('cookie_consent_at') || '0', 10);
+      if (!raw || !at || (Date.now() - at) > SIX_MONTHS) { return null; }
+      return raw;
+    } catch (e) { return null; }
+  }
+  function saveConsent(value) {
+    try {
+      localStorage.setItem('cookie_consent', value);
+      localStorage.setItem('cookie_consent_at', String(Date.now()));
+    } catch (e) {}
+  }
+  // Footer link "Gestion des cookies / Cookie settings": clear the choice and ask again.
+  window.openCookieSettings = function () {
+    try { localStorage.removeItem('cookie_consent'); localStorage.removeItem('cookie_consent_at'); } catch (e) {}
+    banner.style.display = 'block';
+  };
 
   function loadGA() {
     window.dataLayer = window.dataLayer || [];
@@ -44,7 +69,7 @@
     document.head.appendChild(s);
   }
 
-  var consent = localStorage.getItem('cookie_consent');
+  var consent = readConsent();
 
   if (consent === 'accepted') {
     loadGA();
@@ -55,13 +80,13 @@
   }
 
   document.getElementById('cookie-accept').addEventListener('click', function () {
-    localStorage.setItem('cookie_consent', 'accepted');
+    saveConsent('accepted');
     banner.style.display = 'none';
     loadGA();
   });
 
   document.getElementById('cookie-decline').addEventListener('click', function () {
-    localStorage.setItem('cookie_consent', 'declined');
+    saveConsent('declined');
     banner.style.display = 'none';
   });
 })();

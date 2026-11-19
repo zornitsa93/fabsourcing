@@ -82,6 +82,12 @@
            onmouseout="this.style.color='rgba(255,255,255,0.5)'">
           {{ $lang === 'fr' ? 'Confidentialité' : 'Privacy' }}
         </a>
+        @if(config('services.ga_id'))
+        <a href="#" onclick="if (window.openCookieSettings) { openCookieSettings(); } return false;"
+           style="color:rgba(255,255,255,0.5); font-family:inherit; font-size:inherit; letter-spacing:inherit; text-decoration:none">
+          {{ $lang === 'fr' ? 'Gestion des cookies' : 'Cookie settings' }}
+        </a>
+        @endif
         <span>fab-sourcing.fr</span>
       </div>
     </div>
