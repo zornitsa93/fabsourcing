@@ -55,7 +55,9 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'setlocale', 'where' => ['la
 
     // Methodology (bilingual paths)
     Route::get('/methodologie',          [MethodController::class, 'index'])->name('method');
-    Route::get('/methodology',           [MethodController::class, 'index'])->name('method.en');
+    Route::get('/method',                [MethodController::class, 'index'])->name('method.en');
+    // Old EN path -> new one (permanent redirect, keeps the language prefix)
+    Route::get('/methodology', fn (string $lang) => redirect()->route('method.en', ['lang' => $lang], 301));
 
     // About (bilingual paths)
     Route::get('/a-propos',              [AboutController::class,  'index'])->name('about');

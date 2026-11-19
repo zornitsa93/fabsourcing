@@ -5,7 +5,7 @@
 
       {{-- Brand column --}}
       <div>
-        <img class="footer-logo" src="{{ asset('images/logo-fab-full-light.png') }}" alt="Fab Sourcing" />
+        <img class="footer-logo" src="{{ asset('images/logo-fab-full-light-480.webp') }}" alt="Fab Sourcing" width="480" height="120" loading="lazy" />
         <p class="footer-tag">
           {{ $lang === 'fr'
             ? 'Outsourcing industriel en Bulgarie. Métallerie, structures acier, fabrication sur mesure.'
@@ -41,8 +41,9 @@
         <p class="footer-heading">Contact</p>
         <div class="footer-person">
           <img class="footer-person-avatar"
-               src="{{ asset('images/thierry.jpeg') }}"
+               src="{{ asset('images/thierry-240.webp') }}"
                alt="Thierry Sudol"
+               width="120" height="120"
                loading="lazy">
           <div>
             <span class="footer-person-name">Thierry Sudol</span>

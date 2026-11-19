@@ -4,7 +4,7 @@
 
     {{-- Brand logo --}}
     <a href="{{ route('home', $lang) }}" class="brand">
-      <img class="brand-logo" src="{{ asset('images/logo-fab-full.png') }}" alt="Fab Sourcing" />
+      <img class="brand-logo" src="{{ asset('images/logo-fab-full-480.webp') }}" alt="Fab Sourcing" width="480" height="120" />
     </a>
 
     {{-- Desktop nav links --}}
@@ -37,7 +37,7 @@
     {{-- Right: phone + language toggle + CTA --}}
     <div class="nav-right">
       <div class="nav-person">
-        <img src="{{ asset('images/thierry.jpeg') }}" alt="Thierry Sudol" class="nav-person-avatar">
+        <img src="{{ asset('images/thierry-110.webp') }}" alt="Thierry Sudol" class="nav-person-avatar" width="55" height="55">
         <a href="tel:+33784057375" class="nav-phone">+33 (0)7 84 05 73 75</a>
       </div>
 
@@ -79,7 +79,7 @@
 {{-- Mobile drawer --}}
 <div class="nav-mobile-drawer" id="nav-drawer" role="dialog" aria-label="Navigation" aria-modal="true">
   <div class="nav-drawer-header">
-    <img src="{{ asset('images/logo-fab-full.png') }}" alt="Fab Sourcing" style="height:32px; width:auto" />
+    <img src="{{ asset('images/logo-fab-full-480.webp') }}" alt="Fab Sourcing" width="480" height="120" style="height:32px; width:auto" />
     <button class="nav-drawer-close" id="nav-close" aria-label="{{ $lang === 'fr' ? 'Fermer' : 'Close' }}">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -102,7 +102,7 @@
 
   <div class="nav-drawer-footer">
     <a href="tel:+33784057375" class="nav-drawer-phone">
-      <img src="{{ asset('images/thierry.jpeg') }}" alt="Thierry Sudol" class="nav-person-avatar">
+      <img src="{{ asset('images/thierry-110.webp') }}" alt="Thierry Sudol" class="nav-person-avatar" width="55" height="55">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
       </svg>
