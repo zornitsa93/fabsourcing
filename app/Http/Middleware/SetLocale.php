@@ -18,7 +18,13 @@ class SetLocale
             fn () => Language::active()->pluck('slug')->toArray()
         );
 
-        // Fall back to 'fr' if the URL param is missing or unrecognised
+        // A language prefix that is not an active language (/bg, /de ...) must not serve the
+        // French text under another URL (duplicate content): 404.
+        if ($lang !== null && !in_array($lang, $allowed, true)) {
+            abort(404);
+        }
+
+        // Fall back to 'fr' if the URL param is missing
         $locale = in_array($lang, $allowed, true) ? $lang : 'fr';
 
         App::setLocale($locale);

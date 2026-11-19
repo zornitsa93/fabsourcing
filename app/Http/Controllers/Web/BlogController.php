@@ -65,8 +65,14 @@ class BlogController extends WebPagesController
     {
         $post = BlogPost::whereNotNull('published_at')
             ->where('published_at', '<=', now())
-            ->where('slug', $slug)
+            ->where(fn ($q) => $q->where('slug', $slug)->orWhere('slug_en', $slug))
             ->firstOrFail();
+
+        // One canonical URL per language: a FR slug under /en (or the reverse) redirects.
+        $canonicalSlug = $post->getSlugForLang($lang);
+        if ($slug !== $canonicalSlug) {
+            return redirect()->route('blog.show', ['lang' => $lang, 'slug' => $canonicalSlug], 301);
+        }
 
         // 3 related posts sharing at least one tag
         $tags = $post->getTranslation('tags', $lang, false)
@@ -97,8 +103,8 @@ class BlogController extends WebPagesController
         }
 
         $langSwitcherUrls = [
-            'fr' => route('blog.show', ['lang' => 'fr', 'slug' => $slug]),
-            'en' => route('blog.show', ['lang' => 'en', 'slug' => $slug]),
+            'fr' => route('blog.show', ['lang' => 'fr', 'slug' => $post->getSlugForLang('fr')]),
+            'en' => route('blog.show', ['lang' => 'en', 'slug' => $post->getSlugForLang('en')]),
         ];
 
         return view('web.blog.show', array_merge(

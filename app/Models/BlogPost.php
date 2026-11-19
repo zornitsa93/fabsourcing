@@ -12,7 +12,7 @@ class BlogPost extends Model
     use HasFactory, HasTranslations;
 
     protected $fillable = [
-        'slug', 'title', 'excerpt', 'body', 'featured_image',
+        'slug', 'slug_en', 'title', 'excerpt', 'body', 'featured_image',
         'author_name', 'published_at', 'tags',
         'reading_time_minutes', 'meta_title', 'meta_description',
     ];
@@ -24,6 +24,11 @@ class BlogPost extends Model
     protected $casts = [
         'published_at' => 'datetime',
     ];
+
+    public function getSlugForLang(string $lang): string
+    {
+        return ($lang === 'en' && $this->slug_en) ? $this->slug_en : $this->slug;
+    }
 
     // draft | scheduled | published
     public function getStatusAttribute(): string

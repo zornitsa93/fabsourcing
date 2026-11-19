@@ -55,7 +55,7 @@ class SitemapController extends Controller
             ->get()
             ->each(function ($post) use (&$urls, $lang) {
                 $urls[] = [
-                    'loc'        => route('blog.show', ['lang' => $lang, 'slug' => $post->slug]),
+                    'loc'        => route('blog.show', ['lang' => $lang, 'slug' => $post->getSlugForLang($lang)]),
                     'changefreq' => 'weekly',
                     'priority'   => '0.6',
                     'lastmod'    => $post->updated_at->toAtomString(),

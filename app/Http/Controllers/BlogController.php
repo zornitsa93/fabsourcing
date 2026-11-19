@@ -53,6 +53,7 @@ class BlogController extends Controller
         $post = new BlogPost();
         $post->author_name = $request->input('author_name') ?: 'Thierry Sudol';
         $post->slug        = $this->uniqueSlug($request->input('slug') ?: $request->input('title.fr'));
+        $post->slug_en     = $this->uniqueSlugEn($request->input('slug_en'));
 
         $this->fillTranslatable($post, $request);
         $this->handlePublishMode($post, $request);
@@ -95,6 +96,7 @@ class BlogController extends Controller
             $request->input('slug') ?: $request->input('title.fr'),
             $blogPost->id
         );
+        $blogPost->slug_en = $this->uniqueSlugEn($request->input('slug_en'), $blogPost->id);
 
         $this->fillTranslatable($blogPost, $request);
         $this->handlePublishMode($blogPost, $request);
@@ -177,6 +179,23 @@ class BlogController extends Controller
         $i    = 1;
         while (BlogPost::where('slug', $slug)
             ->when($excludeId, fn($q) => $q->where('id', '!=', $excludeId))
+            ->exists()) {
+            $slug = $orig . '-' . $i++;
+        }
+        return $slug;
+    }
+
+    /** Optional English slug: empty means "use the FR slug under /en". Must not clash with any other slug. */
+    private function uniqueSlugEn(?string $base, ?int $excludeId = null): ?string
+    {
+        $slug = Str::slug((string) $base);
+        if ($slug === '') {
+            return null;
+        }
+        $orig = $slug;
+        $i    = 1;
+        while (BlogPost::where(fn ($q) => $q->where('slug', $slug)->orWhere('slug_en', $slug))
+            ->when($excludeId, fn ($q) => $q->where('id', '!=', $excludeId))
             ->exists()) {
             $slug = $orig . '-' . $i++;
         }
