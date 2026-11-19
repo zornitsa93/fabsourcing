@@ -24,7 +24,7 @@
   :hreflang-fr="$langSwitcherUrls['fr'] ?? ''"
   :hreflang-en="$langSwitcherUrls['en'] ?? ''"
   og-type="article"
-  :og-image="$post->featured_image_url ?? asset('images/og-default.jpg')"
+  :og-image="$post->og_image_url ?? asset('images/og-default.jpg')"
 />
 @endpush
 
@@ -37,7 +37,7 @@
   'datePublished'    => $post->published_at?->toIso8601String(),
   'dateModified'     => $post->updated_at->toIso8601String(),
   'author'           => ['@type' => 'Person', 'name' => $post->author_name, 'jobTitle' => $lang === 'fr' ? 'Responsable commercial & marketing' : 'Sales & Marketing Manager', 'url' => route('about', $lang)],
-  'image'            => $post->featured_image_url ? url($post->featured_image_url) : asset('images/og-default.jpg'),
+  'image'            => $post->og_image_url ? url($post->og_image_url) : asset('images/og-default.jpg'),
   'mainEntityOfPage' => $pageUrl,
   'publisher'        => ['@type' => 'Organization', 'name' => 'Fab Sourcing', 'logo' => ['@type' => 'ImageObject', 'url' => asset('images/logo-fab-full.png')]],
 ])" />

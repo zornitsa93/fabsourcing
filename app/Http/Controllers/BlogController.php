@@ -115,7 +115,7 @@ class BlogController extends Controller
     public function destroy(BlogPost $blogPost): RedirectResponse
     {
         if ($blogPost->featured_image) {
-            Storage::disk('public')->delete($blogPost->featured_image);
+            Storage::disk('public')->delete([$blogPost->featured_image, \App\Models\BlogPost::ogPathFor($blogPost->featured_image)]);
         }
         $title = $blogPost->getTranslation('title', 'fr', false);
         $blogPost->delete();
@@ -158,7 +158,7 @@ class BlogController extends Controller
     private function handleFeaturedImage(BlogPost $post, Request $request): void
     {
         if ($request->boolean('remove_featured_image') && $post->featured_image) {
-            Storage::disk('public')->delete($post->featured_image);
+            Storage::disk('public')->delete([$post->featured_image, \App\Models\BlogPost::ogPathFor($post->featured_image)]);
             $post->featured_image = null;
             return;
         }
@@ -167,7 +167,7 @@ class BlogController extends Controller
             return;
         }
         if ($request->hasFile('featured_image_file')) {
-            if ($post->featured_image) Storage::disk('public')->delete($post->featured_image);
+            if ($post->featured_image) Storage::disk('public')->delete([$post->featured_image, \App\Models\BlogPost::ogPathFor($post->featured_image)]);
             $post->featured_image = $request->file('featured_image_file')->store('blog', 'public');
         }
     }
