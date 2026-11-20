@@ -20,7 +20,7 @@ class HomeWhySectionSeeder extends Seeder
         $page->setTranslation('why_caption', 'fr', "Réseau d'usines partenaires");
         $page->setTranslation('why_caption', 'en', 'Partner workshop network');
 
-        $page->why_metric1_value = '30–50%';
+        $page->why_metric1_value = '20–50%';
         $page->setTranslation('why_metric1_label', 'fr', 'd\'économies');
         $page->setTranslation('why_metric1_label', 'en', 'savings');
 

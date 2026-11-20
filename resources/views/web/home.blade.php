@@ -4,11 +4,11 @@
   $metaTitle   = $page?->getTranslation('meta_title', $lang, false)
                ?: ($lang === 'fr' ? 'Fab Sourcing — Sous-traitance industrielle en Bulgarie' : 'Fab Sourcing — Industrial Outsourcing in Bulgaria');
   $metaDesc    = $page?->getTranslation('meta_description', $lang, false)
-               ?: ($lang === 'fr' ? "Externalisez votre production métallurgique en Europe de l'Est. Qualité aux normes européennes, jusqu'à 30–50 % d'économies, délais maîtrisés." : 'Outsource your metalwork production to Eastern Europe. European-standard quality, up to 30–50% savings, controlled lead times.');
+               ?: ($lang === 'fr' ? "Externalisez votre production métallurgique en Europe de l'Est. Qualité aux normes européennes, jusqu'à 20–50 % d'économies, délais maîtrisés." : 'Outsource your metalwork production to Eastern Europe. European-standard quality, up to 20–50% savings, controlled lead times.');
   $heroHeading = $page?->getTranslation('hero_heading', $lang, false)
                ?: ($lang === 'fr' ? "Fabrication\nmétallique\neuropéenne,\ncoûts réduits" : "European\nmetalwork,\nreduced\ncosts");
   $heroLede    = $page?->getTranslation('hero_lede', $lang, false)
-               ?: ($lang === 'fr' ? "Fab Sourcing vous connecte à des ateliers partenaires en Europe de l'Est : métallerie, structures acier, chaudronnerie. Mêmes normes que la France, jusqu'à 30–50 % d'économies." : "Fab Sourcing connects you with partner workshops in Eastern Europe: metalwork, steel structures, fabrication. Same standards as Western Europe, up to 30–50% savings.");
+               ?: ($lang === 'fr' ? "Fab Sourcing vous connecte à des ateliers partenaires en Europe de l'Est : métallerie, structures acier, chaudronnerie. Mêmes normes que la France, jusqu'à 20–50 % d'économies." : "Fab Sourcing connects you with partner workshops in Eastern Europe: metalwork, steel structures, fabrication. Same standards as Western Europe, up to 20–50% savings.");
   $heroLines   = array_filter(explode("\n", $heroHeading));
 @endphp
 
@@ -90,7 +90,7 @@
   <div class="container">
     <div class="stat-grid">
       <div class="stat">
-        <div class="stat-value">30–50<sup>%</sup></div>
+        <div class="stat-value">20–50<sup>%</sup></div>
         <span class="stat-label">{{ $lang === 'fr' ? 'd\'économies réalisées' : 'savings achieved' }}</span>
       </div>
       <div class="stat">

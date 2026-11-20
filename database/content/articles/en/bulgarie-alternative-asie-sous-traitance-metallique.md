@@ -61,7 +61,7 @@ Metalworking is one of the country's industrial pillars. Here are the technical 
 
 By outsourcing your metal production to Bulgaria through Fab Sourcing, you get:
 
-**Measurable savings** – A 30–50% reduction in production costs, calculated on total cost of ownership (material + fabrication + transport + quality + coordination). Not a promise on unit price alone, but a complete view of your value chain.
+**Measurable savings** – A 20–50% reduction in production costs, calculated on total cost of ownership (material + fabrication + transport + quality + coordination). Not a promise on unit price alone, but a complete view of your value chain.
 
 **Operational flexibility** – Peaks in activity absorbed without industrial investment or time-consuming recruitment. The ability to go from 100 to 1,000 parts without a ramp-up period. Small batches and prototypes handled without set-up penalties.
 

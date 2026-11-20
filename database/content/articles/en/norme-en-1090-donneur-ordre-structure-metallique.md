@@ -82,7 +82,7 @@ With a European subcontractor, the requirements stay the same: same documents, s
 
 ## How Fab Sourcing secures your EN 1090 purchases
 
-We only work with workshops whose FPC certificate, execution class and welding qualifications we have checked on site. For every order, we provide the complete file: DoP, material certificates, inspection reports and finishing documents. [To be completed: maximum class covered by the network's workshops, e.g. EXC2 or EXC3.]
+We only work with workshops whose FPC certificate, execution class and welding qualifications we have checked on site. For every order, we provide the complete file: DoP, material certificates, inspection reports and finishing documents. Our partner workshop FabTec is certified up to execution class EXC3.
 
 Do you have a structure, staircase or walkway project? Send us your drawings and the required execution class: we will come back to you within 48 hours with a price and the list of documents supplied.
 

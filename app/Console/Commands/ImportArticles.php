@@ -45,6 +45,7 @@ class ImportArticles extends Command
         ['bulgarie-alternative-asie-sous-traitance-metallique', 'Un conteneur Shanghai-Le Havre', "Un conteneur de Shanghai vers un port d'Europe du Nord"],
         ['bulgarie-alternative-asie-sous-traitance-metallique', "une tradition industrielle héritée de l'ère soviétique", 'une longue tradition industrielle'],
         ['bulgarie-alternative-asie-sous-traitance-metallique', '(3-7 jours)', '(3 à 4 jours en camion complet, 7 à 10 jours en groupage)'],
+        ['bulgarie-alternative-asie-sous-traitance-metallique', '30 à 50 % de réduction sur vos coûts de production', '20 à 50 % de réduction sur vos coûts de production'],
         ['bulgarie-vs-roumanie-sous-traitance-industrielle', "un accès à la Méditerranée via les ports de Varna et Bourgas", "un accès à la mer Noire via les ports de Varna et Bourgas"],
     ];
 

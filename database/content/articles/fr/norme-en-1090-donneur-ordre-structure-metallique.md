@@ -81,7 +81,7 @@ Avec un sous-traitant européen, les exigences restent les mêmes : mêmes docum
 
 ## Comment Fab Sourcing sécurise vos achats EN 1090
 
-Nous ne travaillons qu'avec des ateliers dont nous avons vérifié sur place le certificat FPC, la classe d'exécution et les qualifications de soudage. Pour chaque commande, nous vous remettons le dossier complet : DoP, certificats matière, rapports de contrôle et documents de finition. [À compléter : classe maximale couverte par les ateliers du réseau, ex. EXC2 ou EXC3.]
+Nous ne travaillons qu'avec des ateliers dont nous avons vérifié sur place le certificat FPC, la classe d'exécution et les qualifications de soudage. Pour chaque commande, nous vous remettons le dossier complet : DoP, certificats matière, rapports de contrôle et documents de finition. Notre atelier partenaire FabTec est certifié jusqu'à la classe d'exécution EXC3.
 
 Vous avez un projet de structure, d'escalier ou de passerelle ? Envoyez-nous vos plans et la classe d'exécution demandée : nous revenons vers vous sous 48 heures avec un chiffrage et la liste des documents fournis.
 

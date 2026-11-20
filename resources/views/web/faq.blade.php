@@ -144,8 +144,8 @@ $categories = [
       [
         'q' => $lang === 'fr' ? "Quel est le niveau d'économies réalisable ?" : 'How much can I save?',
         'a' => $lang === 'fr'
-          ? "Nos clients constatent généralement 30 à 50 % de réduction sur le coût total de possession (matière + fabrication + transport + qualité + coordination), comparé à une production en France ou en Allemagne. Ce chiffre varie selon la complexité technique, les volumes et les finitions. Nous établissons un calcul personnalisé lors de notre première analyse."
-          : 'Our clients generally see 30 to 50% reduction in total cost of ownership (material + manufacturing + transport + quality + coordination), compared with production in France or Germany. This figure varies with technical complexity, volumes and finishes. We produce a personalised calculation during our first analysis.',
+          ? "Nos clients constatent généralement 20 à 50 % de réduction sur le coût total de possession (matière + fabrication + transport + qualité + coordination), comparé à une production en France ou en Allemagne. Ce chiffre varie selon la complexité technique, les volumes et les finitions. Nous établissons un calcul personnalisé lors de notre première analyse."
+          : 'Our clients generally see 20 to 50% reduction in total cost of ownership (material + manufacturing + transport + quality + coordination), compared with production in France or Germany. This figure varies with technical complexity, volumes and finishes. We produce a personalised calculation during our first analysis.',
       ],
       [
         'q' => $lang === 'fr' ? "Comment est calculé le prix ?" : 'How is the price calculated?',
