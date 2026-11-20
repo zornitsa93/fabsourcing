@@ -212,6 +212,9 @@
   </div>
 </section>
 
+{{-- Certifications of the partner workshop --}}
+@include('partials.certifications')
+
 {{-- CTA --}}
 <section class="cta-section">
   <div class="container">
