@@ -29,9 +29,17 @@ Romania has a denser industrial base, inherited from its large former manufactur
 
 Both capitals are well connected to European hubs. Romania has a Black Sea coastline with the port of Constanța, useful for some flows. Bulgaria also offers sea access via the Black Sea ports of Varna and Burgas, connected to the Mediterranean through the Bosphorus.
 
-## Our recommendation
+## Industrial manufacturing in Bulgaria
 
-For metalwork, steel structures, railings or glazed partitions, Bulgaria is our main recommendation. This is why Fab Sourcing has built its network of industrial partners exclusively in Bulgaria, based on in-depth field experience.
+### Our recommendation
+
+For metalwork and industrial manufacturing projects, Bulgaria is our primary recommendation. Fab Sourcing works with a network of industrial partners based exclusively in Bulgaria to help you find the expertise suited to your drawings, volumes and technical requirements.
+
+- **Tanks and process equipment:** Stainless steel tanks, hydrocarbon storage tanks, pressure vessels and tanks, hydraulic equipment and industrial skids.
+- **Metalwork and structures:** Steel structures and photovoltaic mounting structures, machine frames, steel racks, concrete formwork, guardrails, glazed metal structures, and custom fences and gates.
+- **Mechanical manufacturing:** Precision machining, forgings, grey iron castings, automated conveyors and welded assemblies.
+
+Have a project in mind? Send us your drawings or specifications. We will help identify manufacturing partners and solutions tailored to your needs.
 
 ---
 
